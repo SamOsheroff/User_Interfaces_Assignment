@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+    ul{
+        list-style: none;
+    }
+    div.middle {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        background-color: #f2f2f2;
+    }
+    div.left {
+        width: 31.5%;
+        border: 1px solid black;
+        background-color: lightgrey;
+        padding: 20px 20px 20px 20px;
+        margin: 10px .5% 10px 1%;
+        overflow:hidden;
+        float:left;
+    }
+    div.topright{
+    display: flex;
+    align-items: center;
+    width: 36%;
+    border: 1px solid black;
+    background-color: white;
+    padding: 5px 5px 5px 25px;
+    margin: 10px .5% 10px 20%;
+    overflow:hidden;
+    float:right;
+    }
+    div.circles{
+        border-radius: 50%;
+        border: 1px solid black;
+        background-color: white; 
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        padding-top: 8px;
+        float: left;
+        margin-right: 40px;
+    }
+div.top {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    background-color: lightgrey;
+    left: 0;
+    z-index: 999;
+    margin: 5px 8px 0 5px;
+    width: 98%;
+    height: 60px;
+    }
+div.right {
+	width: 64%;
+    border: 1px solid black;
+    background-color: lightgrey;
+    padding: 20px 20px 20px 20px;
+    margin: 10px 1% 10px .5%;
+    overflow:hidden;
+    float:left;
+}
+div.footer{
+        border: 1px solid black;
+        padding: 10px;
+        background-color: lightgrey;
+        left: 0;
+        z-index: 999;
+        margin: 10px 8px 0 5px;
+        width: 98%;
+        height: 40px; 
+    }
+div.opinions{
+    width: 100%;
+    height: 30%;
+    border: 1px solid black;
+    background-color: white;
+    padding: 20px;
+    margin: 10px 1% 10px .5%;
+    overflow:hidden;
+    float:left; 
+    }
+div.plus {
+float:right;
+}
+    div.inputL{
+        background-color: #f2f2f2f2;
+        float:left;
+        border: 2px solid black;
+        padding: 7px 40% 7px 5px;
+        margin: 5px 5px 5px 5px;
+        width: 350px;
+        max-width: 350px;
+        overflow: hidden;
+        display: inline;
+    }
+     div.inputR{
+        background-color: #f2f2f2f2;
+        float:right;
+        border: 2px solid black;
+        padding: 7px 5px 7px 5px;
+        margin: 5px 5px 5px 5px;
+        width: 350px;
+        max-width: 350px;
+        overflow: hidden;
+        display: inline;
+    }
+    div.inputM{
+        background-color: #f2f2f2f2;
+        float:left;
+        border: 2px solid black;
+        padding: 7px 93% 7px 5px;
+        margin: 5px 5px 5px 5px;
+        width: 725px;
+        max-width: 725px;
+        overflow: hidden;
+        display: inline;
+    }
+div.prefbox{
+background-color: #f2f2f2f2;
+float:left;
+border: 2px solid black;
+padding: 7px 5px 7px 5px;
+margin: 5px 5px 5px 5px;
+border-radius:5px
+
+}
+img.mainicon{
+        margin-right: 15px;
+        float: left;
+    }
+img.icon{
+    
+    margin: 0 5px 20px 20px;
+}
+img.leftone {
+margin: 0 20px 5px 2px;
+border: 1px solid black
+}
+    a{
+        color: black;
+    }
+
+h1.left {
+font-size: 28px;
+margin: 0 0 15px 0
+}
+
+h2.leftone {
+font-size: 16px;
+margin: 10px 0 10px 0; 
+}
+h2.lefttwo {
+font-size: 16px;
+margin: 25px 0 10px 0; 
+}
+    h1.opinions{
+        font-size: 20px;
+        float: right;
+        text-align: left;
+        
+    }
+
+p.leftone {
+margin: 0  5px  0 10px;
+font-size: 12px
+}
+p span{
+    border-right:2px solid blue;
+}
+    h1.circles{
+        font-size: 18px;
+    }
+hr.left {
+size: 1px;
+ margin-left: auto;
+    margin-right: auto;
+       border-width: 1px;
+       border-style: groove;
+       border-color: black;
+       margin-top: 30px;
+       margin-bottom: 20px;
+       border-radius:5px
+}
+ul.left
+{
+list-style-type: none;
+margin:0;
+padding: 0 0 0 15px;
+}
+li
+{
+font-size: 14px;
+padding: 2.5px 0 0 2.5px
+}
+.hyper
+{font-size: 15px;
+padding: 4px 0 4px 0}
+.beta
+{font-size: 13px;
+padding: 2.5px 0 2.5px 0}
+    .hyper2{
+        font-size: 18px;
+        padding: 0 0 0 0;
+    }
+    .hyperFooter{
+        font-size: 13px;
+        padding: 4px;
+    }
+</style>
+</head>
+    
+<body>
+    
+    <div class = "top"> <h2> <img class="icon" src= http://cdn.onlinewebfonts.com/svg/img_481313.png width="35px" height="35px" float="left"> <a href = "Assignment%201%20-%20Sam.html">Restaurant and Hotel Reviews</a></h2> <div class = "topright"> 
+<a href="#Option 1" class="hyper2">Option 1</a>&emsp; <a href="#Option 1" class="hyper2">Option 2</a>&emsp; <a href="#Option 1" class="hyper2">Option 3</a>
+ </div> </div>
+
+<div class="middle">
+<div class="left">
+<h1 class="left">
+<img class="leftone" src=https://openclipart.org/download/386/Gerald-G-Man-Face-4-World-Label.svg width="25px" height="25px" float="left">
+Username
+</h1>
+<h2 class="leftone" float="right">
+Personal Information
+</h2>
+<ul class="left">
+<li><b>Country of origin:</b> United States</li>
+<li><b>Member since:</b> 2008</li>
+</ul>
+<hr class="left">
+<h2 class="lefttwo">
+<a href = "Last Opinions.html" >Last opinions</a>
+</h2>
+<ul class="left">
+<li class="hyper">
+<a href="#Opinion 1" class="hyper">Opinion 1</a>
+</li>
+<li class="beta">
+<i>September 1, 2017 - </i> First words...</li>
+<li class="hyper">
+<a href="#Opinion 2" class="hyper">Opinion 2</a>
+</li>
+<li class="beta">
+<i>November 14, 2017 - </i> First words...</li>
+<li class="hyper">
+<a href="#Opinion 3" class="hyper">Opinion 3</a>
+</li>
+<li class="beta">
+<i>January 12, 2018 - </i> First words...</li>
+</ul>
+<hr class="left">
+<h2 class="lefttwo">
+My preferences
+<div class="plus">
+<span class="glyphicon glyphicon-plus"></span>
+</div>
+</h2>
+<div class="prefbox">
+Weekend
+<span class="glyphicon glyphicon-remove"></span>
+</div>
+<div class="prefbox">
+Friends
+<span class="glyphicon glyphicon-remove"></span>
+</div>
+<div class="prefbox">
+Travel
+<span class="glyphicon glyphicon-remove"></span>
+</div>
+</div>
+<div class="right">
+    <h1 class = "left">Personal Information</h1>
+    <div class = "inputL">Name</div>
+    <div class = "inputR">Surname</div>
+    <div class = "inputM">Email</div>
+    <div class = "inputL">Address</div>
+    <div class = "inputR">Mobile Phone</div>
+    <div class = "inputM">Birthday</div>
+    
+    <h1 class = "left">My Activity in the App</h1>
+    
+    <div class = "circles"><h1 class = "circles">X <br />Points</h1></div>
+    <div class = "circles"><h1 class = "circles">2 <br />Levels</h1></div>
+    <div class = "circles"><h1 class = "circles">3 <br />Opinions</h1></div>
+    <div class = "circles"><h1 class = "circles">5 <br />Photos</h1></div>
+</div>
+</div>
+    <div class = "footer">
+        <p class = "footer"> 
+            <span><a href="#Option 1" class="hyperFooter"> Facebook </a></span>
+            <span><a href="#Option 1" class="hyperFooter"> Twitter </a></span> 
+            <span><a href="#Option 1" class="hyperFooter"> Copyright </a></span>
+        </p>
+    </div>
+</body>
+</html>
+
