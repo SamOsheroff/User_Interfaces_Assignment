@@ -1,12 +1,61 @@
+/*begin lines for alternate displays*/
 @media only screen and (max-width:600px) { 
 .notforphone {display:none}
 }
 @media only screen and (max-width:800px) { 
 .notfortablet {display:none}
 }
+@media only screen and (min-width:800px) { 
+.notforcomp {display:none}
+}
+div.toptablet{
+ overflow: auto;
+
+    border: 1px solid black;
+    background-color: lightgrey;
+    left: 0;
+/*    z-index: 999;*/
+    margin: 5px 8px 0 5px;
+    padding: 5px 0 0 0;
+    width: 98%;
+height:60px;   
+}
+div.optionstablet{
 
 
-/*media only lines stop here*/
+    align-items: center;
+    width: auto;
+    border: 1px solid black;
+    background-color: white;
+    padding: 0 5px 0 5px;
+    margin: 5px 8px 0 5px;
+    overflow:hidden;
+       float:auto;
+}
+div.pagestablet{
+   
+    align-items: center;
+    width: auto;
+    background-color: white;
+    padding: 0 5px 0 5px;
+    margin: 0px 8px 0px 5px;
+    overflow:hidden;
+       float:auto;
+} 
+
+
+h1.lefttablet{
+ font-size: 28px;
+margin: 10px 0 5px 0   
+    
+}
+a.pagestablet{
+    font-size:18px;
+    margin: 0 5px 0 10px;
+}
+
+
+/*alternate display lines stop here*/
 
 ul{
         list-style: none;
@@ -144,7 +193,7 @@ p.leftone {
 margin: 0  5px  0 10px;
 font-size: 12px
 }
-p span{
+p span.right{
     border-right:2px solid blue;
 }
 hr.left {
