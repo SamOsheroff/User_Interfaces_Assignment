@@ -1,8 +1,12 @@
 /*begin lines for alternate displays*/
 @media only screen and (max-width:600px) { 
 .notforphone {display:none}
+    h2.top {font-size:18px}
+    div.toptablet{align-items:center;
+    justify-content: center;
+    display:flex;}
 }
-@media only screen and (max-width:800px) { 
+@media only screen and (max-width:800px) and (min-width:600px) { 
 .notfortablet {display:none}
 }
 @media only screen and (min-width:800px) { 
@@ -10,7 +14,6 @@
 }
 div.toptablet{
  overflow: auto;
-
     border: 1px solid black;
     background-color: lightgrey;
     left: 0;
@@ -19,6 +22,7 @@ div.toptablet{
     padding: 5px 0 0 0;
     width: 98%;
 height:60px;   
+
 }
 div.optionstablet{
 
@@ -34,8 +38,7 @@ div.optionstablet{
 }
 div.pagestablet{
    
-    align-items: center;
-    width: auto;
+    width: 100%;
     background-color: white;
     padding: 0 5px 0 5px;
     margin: 0px 8px 0px 5px;
@@ -51,12 +54,38 @@ div.middletablet{
     overflow:hidden;
 }
 
+div.bottomphone{
+      
+    width: 100%;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    overflow:hidden;
+       float:auto; 
+    display:flex;
+}
+div.bottomicon{
+    width:33%;
+    text-align:center;
+}
+.transparent{
+    opacity:.5;
+}
+span.bottomicon{
+    font-size:50px;
+    display:inline-block;
+    float:auto;
+}
+
+
 
 h1.lefttablet{
  font-size: 28px;
-margin: 10px 0 5px 0   
+margin: 10px 0 5px 3px   
     
 }
+
+
 a.pagestablet{
     font-size:18px;
     margin: 0 5px 0 10px;
