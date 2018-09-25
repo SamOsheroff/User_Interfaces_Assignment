@@ -12,6 +12,7 @@
 @media only screen and (min-width:800px) { 
 .notforcomp {display:none}
 }
+
 div.toptablet{
  overflow: auto;
     border: 1px solid black;
@@ -164,7 +165,7 @@ div.footer{
     }
 div.opinions{
     width: 100%;
-    height: 30%;
+    height: 40%;
     border: 1px solid black;
     background-color: white;
     padding: 20px;
@@ -291,6 +292,7 @@ padding: 2.5px 0 2.5px 0}
         display:inline-block;
         vertical-align: top;
         width: 49.7%;
+        float: left;
     }
 
 .inline{
@@ -307,6 +309,7 @@ div.circles{
         width: 100px;
         height: 100px;
         background-color: white;
+        margin-bottom: 5px;
         }
         h1.circles{
             font-size: 17px;
@@ -316,3 +319,6 @@ div.circles{
             top: 0;
             left: 0;
         }
+ p.rest{
+                margin-left: 0;
+            }
