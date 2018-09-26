@@ -1,3 +1,9 @@
+<!--
+UI assignment 1 parts 2 and 3: Last opinions webpage
+Authors: Sam Osheroff, Tamasha Pathirathna
+27/09/2018
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -87,35 +93,37 @@
             <div class="right notforphone notfortablet">
                 <h1 class = "left">Last Opinions</h1>
                 <div class = "opinions">
-                    <p>
+
                         <img class="mainicon" src= https://cdn.designxel.com/wp-content/uploads/2017/09/cartoon-pizza-restaurant-vector-ai.jpg width="80px" height="80px" >
                     <ul>
                         <li>100 Montaditos</li>
                         <li>Madrid, Spain</li>
                         20/09/2018
                     </ul>
-                    
+                     <p>
+                         <br>
                     This is a great cheap option for food and drinks! It's not very expensive and there's always a good crowd to keep everyone having fun. A great place for college students or travelers on a budget that want to experience modern, Spanish culture.
                     </p>
                 </div>
             
                 <div class = "opinions">
-                    <p>
+
                     <img class="mainicon" src= https://png2.kisspng.com/20180304/uhe/kisspng-cafe-restaurant-cartoon-color-coffee-house-5a9c8ee17285d2.8076028615202096334691.png width="80px" height="80px">
                     <ul>
                         <li>Perrachica</li>
                         <li>Madrid, Spain</li>
                         <li>20/10/2018</li>
                     </ul>
-                    
+                    <p>
+                        <br>
                     While the restaurant is very beautiful and looks amazing from the outside, I had a terrible experience here. The waiters are very rude and won't serve you water if you ask for it. I will not be returning here.
                     </p>
                 </div>
         </div>
         
         </div>
-<!-- begin footer -->
-    <div class = "footer">
+<!-- begin footer, with dummy links to outboard sections -->
+    <div class = "footer notforphone notfortablet">
         <p class = "footer"> 
             <span><a href="#Option 1" class="hyperFooter"> Facebook </a></span>
             <span><a href="#Option 1" class="hyperFooter"> Twitter </a></span> 
@@ -126,27 +134,27 @@
 
 <!--begin tablet version, see top of body section for explanation on different webpage versions-->
    
-<!-- begin header sections, including icon-->
+<!-- begin header sections, including icon and webpage title-->
 <div class= "toptablet notforcomp">
             <h2 class="top">
                 <img class="icon" src= http://cdn.onlinewebfonts.com/svg/img_481313.png width="35px" height="35px" float="left">
                 <a href = "Personal%20Information.html">Restaurant and Hotel Reviews</a>
             </h2>
         </div>
-        
+<!-- begin seperate dummy navigation bar, outside header -->
         <div class="optionstablet notforcomp notforphone">
             <a href="#Option 1" class="hyper2">Option 1</a>&emsp;
             <a href="#Option 1" class="hyper2">Option 2</a>&emsp;
             <a href="#Option 1" class="hyper2">Option 3</a>
         </div>
-        
+    <!-- begin section for profile photo and name -->
         <div class="notforcomp" >
             <h1 class="lefttablet">
                 <img class="leftone" src=https://openclipart.org/download/386/Gerald-G-Man-Face-4-World-Label.svg width="25px" height="25px" float="left">
                 Juan-Rios
             </h1>
         </div>
-        
+        <!--begin navigation bar for personal information/opinions/preferences-->
         <div class="pagestablet notforcomp notforphone">
                 <p class = "footer"> 
                 <span class="right"><a href="#Personal Information" class="pagestablet"> Personal Information </a></span>
@@ -154,7 +162,7 @@
                 <span><a href="#My Preferences" class="pagestablet"> My Preferences </a></span>
                 </p>
         </div>
-    
+    <!--begin middle section, containing full restaurant reviews and graphics -->
         <div class = "middletablet pagestablet notforcomp">
             <div class = "opinions">
                         <img class="mainicon" src= https://cdn.designxel.com/wp-content/uploads/2017/09/cartoon-pizza-restaurant-vector-ai.jpg width="80px" height="80px" >
@@ -165,8 +173,9 @@
                         <li>Madrid, Spain</li>
                         20/09/2018
                     </ul>
+                <!-- note the "notforphone" class included on the paragraphs, so they disappear when the viewport changes to mobile phone size, allowing this div to be carried over instead of fully deleted and recreated for the phone version--> 
                 <p class = "notforphone">
-                    This is a great cheap option for food and drinks! It's not very expensive and there's always a good crowd to keep everyone having fun. A great place for college students or travelers on a budget that want to experience modern, Spanish culture.
+                    <br>This is a great cheap option for food and drinks! It's not very expensive and there's always a good crowd to keep everyone having fun. A great place for college students or travelers on a budget that want to experience modern, Spanish culture.
                     </p>
                 </div>
             
@@ -179,13 +188,16 @@
                         <li>20/10/2018</li>
                     </ul>
                     <p class = "notforphone">
-                    While the restaurant is very beautiful and looks amazing from the outside, I had a terrible experience here. The waiters are very rude and won't serve you water if you ask for it. I will not be returning here.
+                    <br>While the restaurant is very beautiful and looks amazing from the outside, I had a terrible experience here. The waiters are very rude and won't serve you water if you ask for it. I will not be returning here.
                         </p>
-                    </p>
+
                 </div>
+            <p>load more</p>
     </div>
     
     <!--begin add-ons for phone version-->
+        <!--NOTE: because the transition from tablet version to phone version requires fewer changes, many of the divs from the tablet section undergo slight formatting changes, included in the CSS, rather than being fully deleted-->
+        <!--begin bottom div with page icons-->
         <div class="bottomphone notfortablet notforcomp">
             <div class="bottomicon notfortablet notforcomp">
                 <span class="glyphicon glyphicon-user bottomicon"></span>
