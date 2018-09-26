@@ -1,30 +1,40 @@
+<!--
+UI assignment 1 parts 2 and 3: Last opinions webpage
+Authors: Sam Osheroff, Tamasha Pathirathna
+27/09/2018
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
+     <!-- link to external stylesheets: Assignment1.css for specific css, bootstrap link for glyphicons and general aesthetic elements-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="Assignment1.css">
         <style>
         </style>
     </head>
-    
-    <body>
-    
+<!--To account for different viewport sizes, the code is structured such that the div sections for each version - computer, tablet, and phone - are hidden when the window is sized outside their respective horizontal dimension, and only are displayed when the window is the right size, as specified at the beginning of the attached CSS. As such, the HTML body is divided into 3 versions, delineated by comments. --> 
 <!--begin computer screen version-->
+    <body>
+
+        <!--begin header section, including logo, website title, and navigation bar-->
         <div class = "top notforphone notfortablet">
             <h2 class="top">
                 <img class="icon" src= http://cdn.onlinewebfonts.com/svg/img_481313.png width="35px" height="35px" float="left">
                 <a href = "Assignment%201%20-%20Sam.html">Restaurant and Hotel Reviews</a>
             </h2>
-            
+            <!--begin navigation bar-->
             <div class = "topright"> 
                 <a href="#Option 1" class="hyper2">Option 1</a>&emsp;
                 <a href="#Option 1" class="hyper2">Option 2</a>&emsp;
                 <a href="#Option 1" class="hyper2">Option 3</a>
             </div>
         </div>
-        
+<!-- begin flex container for middle sections -->      
         <div class="middle notforphone notfortablet">
+            <!--begin left column section-->
             <div class="left notforphone notfortablet">
+                <!-- Name, photo, and personal information -->
                 <h1 class="left">
                     <img class="leftone" src=https://openclipart.org/download/386/Gerald-G-Man-Face-4-World-Label.svg width="25px" height="25px" float="left">
                     Juan-Rios
@@ -37,6 +47,7 @@
                     <li><b>Member since:</b> 2008</li>
                 </ul>
                 <hr class="left">
+                <!--previews of Last opinions, with truncated descriptions -->
                 <h2 class="lefttwo">
                     <a href = "Last Opinions.html" >Last opinions</a>
                 </h2>
@@ -58,6 +69,7 @@
                         <i>January 12, 2018 - </i>I got my phone stolen here, ...</li>
                 </ul>
                 <hr class="left">
+                 <!-- Dummy user input area for displaying preferences, including some sample tags -->
                 <h2 class="lefttwo">
                     My preferences
                     <div class="plus">
@@ -77,9 +89,9 @@
                     <span class="glyphicon glyphicon-remove"></span>
                 </div>
             </div>
-            
+             <!--begin right column section for personal information input and app activity icons-->
             <div class="right notforphone notfortablet" >
-                
+                <!-- begin personal information input section, which is coded to allow the user to type in the boxes -->
                 <div class = "col-3 menu">
                     <h1 class = "left">Personal Information</h1>
                     <ul>
@@ -91,7 +103,7 @@
                         <li><input type="text" name="firstname" value="Birthday"></li>
                     </ul>
                 </div>
-                
+                <!-- begin section with dummy information for app activity placed in icons -->
                 <div style= "position:relative left:0 right: 0 bottom:0">
                     <h1 class = "left">My Activity in the App</h1>
                     <div class = "circles"><h1 class = "circles">X <br />Points</h1></div>
@@ -101,7 +113,7 @@
                 </div>
             </div>
         </div>
-        
+ <!-- begin footer, with dummy links to outboard sections -->       
         <div class = "footer notforphone notfortablet">
             <p class = "footer"> 
             <span class="right"><a href="#Option 1" class="hyperFooter"> Facebook </a></span>
@@ -111,29 +123,28 @@
         </div>
  
 <!-- End computer screen version -->   
-    
-    
-<!-- Begin tablet version -->
+<!--begin tablet version, see top of body section for explanation on different webpage versions-->
+<!-- begin header sections, including icon and webpage title-->
         <div class= "toptablet notforcomp">
             <h2 class="top">
                 <img class="icon" src= http://cdn.onlinewebfonts.com/svg/img_481313.png width="35px" height="35px" float="left">
                 <a href = "Personal%20Information.html">Restaurant and Hotel Reviews</a>
             </h2>
         </div>
-        
+<!-- begin seperate dummy navigation bar, outside header -->    
         <div class="optionstablet notforcomp notforphone">
             <a href="#Option 1" class="hyper2">Option 1</a>&emsp;
             <a href="#Option 1" class="hyper2">Option 2</a>&emsp;
             <a href="#Option 1" class="hyper2">Option 3</a>
         </div>
-        
+    <!-- begin section for profile photo and name -->  
         <div class="notforcomp" >
             <h1 class="lefttablet">
                 <img class="leftone" src=https://openclipart.org/download/386/Gerald-G-Man-Face-4-World-Label.svg width="25px" height="25px" float="left">
                 Juan-Rios
             </h1>
         </div>
-        
+    <!--begin navigation bar for personal information/opinions/preferences-->
         <div class="pagestablet notforcomp notforphone">
                 <p class = "footer"> 
                 <span class="right"><a href="#Personal Information" class="pagestablet"> Personal Information </a></span>
@@ -141,8 +152,9 @@
                 <span><a href="#My Preferences" class="pagestablet"> My Preferences </a></span>
                 </p>
         </div>
-        
+    <!--begin middle section, including personal information input boxes and activity icons -->
         <div class = "middletablet pagestablet notforcomp">
+        <!-- begin input boxes in tablet format. Note the notforphone class, which causes this menu to disappear when the viewport changes to mobile phone size, allowing the parent div above to be reused in the phone version instead of fully deleted and recreated-->
             <div class = "col-3 menu notforphone">
                 <ul>
                     
@@ -154,7 +166,7 @@
                     <li><input type="text" name="firstname" value="Birthday"></li>
                 </ul>
             </div>
-    
+    <!-- begin input boxes in phone format. The "notfortablet" class causes this section to only be displayed inside the parent when the screen is sized for the phone viewport-->
          <div class = "col-3 menu notfortablet notforcomp">
             <ul>
                 <li><input type="text" name="firstname" value="Name"></li>
@@ -165,7 +177,7 @@
                 <li><input type="text" name="firstname" value="Birthday"></li>
             </ul>
         </div>
-        
+    <!--begin app activity icons, which are formatted such that they can carry over from tablet to phone versions without needing to be created--> 
         <h4>My Activity in the App</h4>
         
             <ul>
@@ -181,6 +193,9 @@
         </div>
 
 <!--begin add-ons for phone version-->
+        
+    <!--NOTE: because the transition from tablet version to phone version requires fewer changes, many of the divs from the tablet section undergo slight formatting changes, included in the CSS, rather than being fully deleted-->
+        <!--begin bottom div with page icons-->
         <div class="bottomphone notfortablet notforcomp">
             <div class="bottomicon notfortablet notforcomp">
                 <span class="glyphicon glyphicon-user bottomicon"></span>
