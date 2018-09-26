@@ -6,11 +6,16 @@
     justify-content: center;
     display:flex;}
 }
-@media only screen and (max-width:800px) and (min-width:600px) { 
+@media only screen and (max-width:768px) and (min-width:600px) { 
 .notfortablet {display:none}
 }
-@media only screen and (min-width:800px) { 
+@media only screen and (min-width:768px) { 
 .notforcomp {display:none}
+}
+
+input{
+    width: 100%;
+    border: none;
 }
 
 div.toptablet{
@@ -286,6 +291,7 @@ padding: 2.5px 0 2.5px 0}
 
 .menu li:hover {
     background-color: lightgrey;
+    
 }
 
 .menu li.structure{
