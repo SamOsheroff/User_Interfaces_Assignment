@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- link to external stylesheets: Assignment1.css for specific css, bootstrap link for glyphicons and general aesthetic elements-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="Assignment1.css">
     </head>
 
+<!--To account for different viewport sizes, the code is structured such that the div sections for each version - computer, tablet, and phone - are hidden when the window is sized outside their respective horizontal dimension, and only are displayed when the window is the right size, as specified at the beginning of the attached CSS. As such, the HTML body is divided into 3 versions, delineated by comments. -->
+    
 <!--begin computer screen version-->
     <body>
+        <!--begin header section, including logo, website title, and navigation bar-->
         <div class = "top notforphone notfortablet">
             <h2 class="top">
                 <img class="icon" src= http://cdn.onlinewebfonts.com/svg/img_481313.png width="35px" height="35px" float="left">
                 <a href = "Assignment%201%20-%20Sam.html">Restaurant and Hotel Reviews</a>
             </h2>
-            
+            <!--begin navigation bar-->
             <div class = "topright"> 
                 <a href="#Option 1" class="hyper2">Option 1</a>&emsp;
                 <a href="#Option 1" class="hyper2">Option 2</a>&emsp; 
                 <a href="#Option 1" class="hyper2">Option 3</a>
             </div>
         </div>
-
+<!-- begin flex container for middle sections -->
         <div class="middle notforphone notfortablet">
+            <!--begin left column section-->
             <div class="left notforphone notfortablet">
+                <!-- Name, photo, and personal information -->
                 <h1 class="left">
                     <img class="leftone" src=https://openclipart.org/download/386/Gerald-G-Man-Face-4-World-Label.svg width="25px" height="25px" float="left">
                     Juan-Rios
@@ -35,6 +41,7 @@
                     <li><b>Member since:</b> 2008</li>
                 </ul>
                 <hr class="left">
+                <!--previews of Last opinions, with truncated descriptions -->
                 <h2 class="lefttwo">
                     <a href = "Last Opinions.html" >Last opinions</a>
                 </h2>
@@ -56,6 +63,7 @@
                         <i>January 12, 2018 - </i>I got my phone stolen here, ...</li>
                 </ul>
                 <hr class="left">
+                <!-- Dummy user input area for displaying preferences, including some sample tags -->
                 <h2 class="lefttwo">
                     My preferences
                     <div class="plus">
@@ -75,7 +83,7 @@
                     <span class="glyphicon glyphicon-remove"></span>
                 </div>
             </div>
-            
+            <!--begin right column section for longer user opinion sections and visuals-->
             <div class="right notforphone notfortablet">
                 <h1 class = "left">Last Opinions</h1>
                 <div class = "opinions">
@@ -106,6 +114,7 @@
         </div>
         
         </div>
+<!-- begin footer -->
     <div class = "footer">
         <p class = "footer"> 
             <span><a href="#Option 1" class="hyperFooter"> Facebook </a></span>
@@ -114,8 +123,11 @@
         </p>
     </div>
 <!--end computer screen version-->
-    
-     <div class= "toptablet notforcomp">
+
+<!--begin tablet version, see top of body section for explanation on different webpage versions-->
+   
+<!-- begin header sections, including icon-->
+<div class= "toptablet notforcomp">
             <h2 class="top">
                 <img class="icon" src= http://cdn.onlinewebfonts.com/svg/img_481313.png width="35px" height="35px" float="left">
                 <a href = "Personal%20Information.html">Restaurant and Hotel Reviews</a>
