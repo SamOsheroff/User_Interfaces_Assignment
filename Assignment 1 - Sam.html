@@ -1,96 +1,107 @@
 <!DOCTYPE html>
+<!--
+Authors: Sam Osheroff and Tamasha Pathirathna
+Date: 26/09/18
+
+This is an html file containing the html5 code to create the main page of the website. The file is linked to a cascading style sheet named "Assignment1.css" which contains relevant style code. Hyperlinks have been added to the "Restaurant and Hotel", "Personal Information" and "Last Opinions" labels. The Restaurant and Hotel link guides the user back to the main page, the others guide the user their associated page.
+-->
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="Assignment1.css">
-
 </head>
     
 <body>
+     <!--begin header section, including logo, website title, and menu bar-->
+    <div class = "top"> 
+        <h2 class="top">
+            <img class="icon" src= http://cdn.onlinewebfonts.com/svg/img_481313.png width="35px" height="35px" float="left">
+            <a href = "Assignment%201%20-%20Sam.html">Restaurant and Hotel Reviews</a>
+        </h2>
+        
+        <div class = "topright"> 
+            <a href="#Option 1" class="hyper2">Option 1</a>&emsp; 
+            <a href="#Option 1" class="hyper2">Option 2</a>&emsp; 
+            <a href="#Option 1" class="hyper2">Option 3</a>
+        </div> 
+    </div>
     
-    <div class = "top"> <h2 class="top"> <img class="icon" src= http://cdn.onlinewebfonts.com/svg/img_481313.png width="35px" height="35px" float="left"> <a href = "Assignment%201%20-%20Sam.html">Restaurant and Hotel Reviews</a></h2> <div class = "topright"> 
-<a href="#Option 1" class="hyper2">Option 1</a>&emsp; <a href="#Option 1" class="hyper2">Option 2</a>&emsp; <a href="#Option 1" class="hyper2">Option 3</a>
- </div> </div>
+<!--begin middle section, including user information and a middle section to display web contents-->
+    <div class="middle">
+        
+        <!--begin left middle section, including user information and previews of reviews-->
+        <div class="left">
+            
+            <h1 class="left">
+                <img class="leftone" src=https://openclipart.org/download/386/Gerald-G-Man-Face-4-World-Label.svg width="25px" height="25px" float="left">
+                Juan-Rios
+            </h1>
+            
+            <h2 class="leftone" float="right">
+                <a href = "Personal%20Information.html">Personal Information</a>
+            </h2>
+            <ul class="left">
+                <li><b>Country of origin:</b> United States</li>
+                <li><b>Member since:</b> 2008</li>
+            </ul>
+            
+            <hr class="left">
+            
+            <h2 class="lefttwo">
+                <a href = "Last Opinions.html" >Last opinions</a>
+            </h2>
+            
+            <ul class="left">
+                <li class="hyper">
+                    <a href="#Opinion 1" class="hyper">100 Montaditos, Madrid, Spain</a>
+                </li>
+                <li class="beta">
+                    <i>September 1, 2017 - </i> This is a great cheap optio...</li>
+                <li class="hyper">
+                    <a href="#Opinion 2" class="hyper">Perrachica, Madrid, Spain</a>
+                </li>
+                <li class="beta">
+                    <i>November 14, 2017 - </i> While the restaurant is ver...</li>
+                <li class="hyper">
+                    <a href="#Opinion 3" class="hyper">Starbucks, Madrid, Spain</a>
+                </li>
+                <li class="beta">
+                    <i>January 12, 2018 - </i>I got my phone stolen here, ...</li>
+            </ul>
+            
+            <hr class="left">
+            
+            <h2 class="lefttwo">
+                My preferences
+                <div class="plus">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </div>
+            </h2>
+            
+            <div class="prefbox">
+                Weekend
+                <span class="glyphicon glyphicon-remove"></span>
+            </div>
+            
+            <div class="prefbox">
+                Friends
+                <span class="glyphicon glyphicon-remove"></span>
+            </div>
+            
+            <div class="prefbox">
+                Travel
+                <span class="glyphicon glyphicon-remove"></span>
+            </div>
+            
+        </div>
+        
+        <!--begin right middle section, space to display user content-->
+        <div class="right">
+        </div>
+        
+    </div>
 
-<div class="middle">
-<div class="left">
-<h1 class="left">
-<img class="leftone" src=https://openclipart.org/download/386/Gerald-G-Man-Face-4-World-Label.svg width="25px" height="25px" float="left">
-Juan-Rios
-</h1>
-<h2 class="leftone" float="right">
-<a href = "Personal%20Information.html">Personal Information</a>
-</h2>
-<ul class="left">
-<li><b>Country of origin:</b> United States</li>
-<li><b>Member since:</b> 2008</li>
-</ul>
-<hr class="left">
-<h2 class="lefttwo">
-<a href = "Last Opinions.html" >Last opinions</a>
-</h2>
-<ul class="left">
-<li class="hyper">
-<a href="#Opinion 1" class="hyper">100 Montaditos, Madrid, Spain</a>
-</li>
-<li class="beta">
-<i>September 1, 2017 - </i> This is a great cheap optio...</li>
-<li class="hyper">
-<a href="#Opinion 2" class="hyper">Perrachica, Madrid, Spain</a>
-</li>
-<li class="beta">
-<i>November 14, 2017 - </i> While the restaurant is ver...</li>
-<li class="hyper">
-<a href="#Opinion 3" class="hyper">Starbucks, Madrid, Spain</a>
-</li>
-<li class="beta">
-<i>January 12, 2018 - </i>I got my phone stolen here, ...</li>
-</ul>
-<hr class="left">
-<h2 class="lefttwo">
-My preferences
-<div class="plus">
-<span class="glyphicon glyphicon-plus"></span>
-</div>
-</h2>
-<div class="prefbox">
-Weekend
-<span class="glyphicon glyphicon-remove"></span>
-</div>
-<div class="prefbox">
-Friends
-<span class="glyphicon glyphicon-remove"></span>
-</div>
-<div class="prefbox">
-Travel
-<span class="glyphicon glyphicon-remove"></span>
-</div>
-</div>
-<div class="right">
-<!--
-        <h1 class = "left">Last Opinions</h1>
-    <div class = "opinions"><section><img class="mainicon" src= https://cdn.designxel.com/wp-content/uploads/2017/09/cartoon-pizza-restaurant-vector-ai.jpg width="80px" height="80px"><ul><li>Restaurant Opinions</li><li>City, Country</li><li></li>Day, Month, Year</ul></section></div>
-    <div class = "opinions"><img class="mainicon" src= https://png2.kisspng.com/20180304/uhe/kisspng-cafe-restaurant-cartoon-color-coffee-house-5a9c8ee17285d2.8076028615202096334691.png width="80px" height="80px"><ul><li>Restaurant Opinions</li><li>City, Country</li><li></li>Day, Month, Year</ul> </div>
--->
-    
-<!--
-        <h1 class = "left">Personal Information</h1>
-    <div class = "inputL">Name</div>
-    <div class = "inputR">Surname</div>
-    <div class = "inputM">Email</div>
-    <div class = "inputL">Address</div>
-    <div class = "inputR">Mobile Phone</div>
-    <div class = "inputM">Birthday</div>
-    
-    <h1 class = "left">My Activity in the App</h1>
-    
-    <div class = "circles"><h1 class = "circles">X <br />Points</h1></div>
-    <div class = "circles"><h1 class = "circles">2 <br />Levels</h1></div>
-    <div class = "circles"><h1 class = "circles">3 <br />Opinions</h1></div>
-    <div class = "circles"><h1 class = "circles">5 <br />Photos</h1></div>
--->
-</div>
-</div>
+    <!--begin footer section, including social media links and copyright-->
     <div class = "footer">
         <p class = "footer"> 
             <span><a href="#Option 1" class="hyperFooter"> Facebook </a></span>
