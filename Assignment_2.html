@@ -8,16 +8,38 @@ This is an html file containing the html5 code to create the main page of the we
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" style = "text/css" href="Assignment1.css">
-    <script src="myScript.js"></script>
+    <link rel="stylesheet" href="Assignment_2.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ 
+$(".personalinfolink").click(function(){
+        $(".personalinfo").show();
+         $(".personalinfo").removeClass('hide');
+         $(".lastopinions").hide();
+    }); 
+    $(".lastopinionslink").click(function(){
+        $(".personalinfo").hide();
+         $(".lastopinions").show(); $(".lastopinions").removeClass("hide");
+    }); 
+    
+    $(".mainpagelink").click(function(){
+        $(".personalinfo").hide();
+         $(".lastopinions").hide();
+    }); 
+        });
+
+</script>
 </head>
     
 <body>
      <!--begin header section, including logo, website title, and menu bar-->
+
     <div class = "top"> 
+
         <h2 class="top">
             <img class="icon" src= http://cdn.onlinewebfonts.com/svg/img_481313.png width="35px" height="35px" float="left">
-            <a href = "Assignment%201%20-%20Sam.html">Restaurant and Hotel Reviews</a>
+            <a href = "#mainpage" class="mainpagelink">Restaurant and Hotel Reviews</a>
         </h2>
         
         <div class = "topright"> 
@@ -32,14 +54,14 @@ This is an html file containing the html5 code to create the main page of the we
         
         <!--begin left middle section, including user information and previews of reviews-->
         <div class="left">
-            
+
             <h1 class="left">
                 <img class="leftone" src=https://openclipart.org/download/386/Gerald-G-Man-Face-4-World-Label.svg width="25px" height="25px" float="left">
                 Juan-Rios
             </h1>
             
             <h2 class="leftone" float="right">
-                <a href = "Personal%20Information.html">Personal Information</a>
+                <a href="#personalinfo" class="personalinfolink">Personal Information</a>
             </h2>
             <ul class="left">
                 <li><b>Country of origin:</b> United States</li>
@@ -49,7 +71,8 @@ This is an html file containing the html5 code to create the main page of the we
             <hr class="left">
             
             <h2 class="lefttwo">
-                <a href = "Last Opinions.html" >Last opinions</a>
+                <a href = "#lastopinions"
+                   class="lastopinionslink">Last opinions</a>
             </h2>
             
             <ul class="left">
@@ -98,9 +121,90 @@ This is an html file containing the html5 code to create the main page of the we
         
         <!--begin right middle section, space to display user content-->
         <div class="right">
+                <button>button</button>
+
+            <!--begin personal information section, to be shown when personal information link is clicked and hidden otherwise-->    
+            <div class="personalinfo hide">
+            <div class = "col-3 menu">
+                    <h1 class = "left">Personal Information</h1>
+                    <ul>
+                        <li class = "structure"><input type="text" name="firstname" value="Name"></li>
+                        <li class = "structure"><input type="text" name="firstname" value="Surname"></li>
+                        <li><input type="text" name="firstname" value="Email"></li>
+                        <li class = "structure"><input type="text" name="firstname" value="Address"></li>
+                        <li class = "structure"><input type="text" name="firstname" value="Mobile Phone"></li>
+                        <li><input type="text" name="firstname" value="Birthday"></li>
+                    </ul>
+                </div>
+                <!-- begin section with dummy information for app activity placed in icons, also under to be shown when personal information link is clicked -->
+                <div style= "position:relative left:0 right: 0 bottom:0">
+                    <h1 class = "left">My Activity in the App</h1>
+                    <div class = "circles"><h1 class = "circles">X <br />Points</h1></div>
+                    <div class = "circles"><h1 class = "circles">2 <br />Levels</h1></div>
+                    <div class = "circles"><h1 class = "circles">3 <br />Opinions</h1></div>
+                    <div class = "circles"><h1 class = "circles">5 <br />Photos</h1></div>
+  
+                </div>
+            </div>
+            <div class="lastopinions hide">
+            <h1 class = "left">Last Opinions</h1>
+                <div class = "opinions">
+
+                        <img class="mainicon" src= https://cdn.designxel.com/wp-content/uploads/2017/09/cartoon-pizza-restaurant-vector-ai.jpg width="80px" height="80px" >
+                    <ul>
+                        <li>100 Montaditos</li>
+                        <li>Madrid, Spain</li>
+                        20/09/2018
+                    </ul>
+                     <p>
+                         <br>
+                    This is a great cheap option for food and drinks! It's not very expensive and there's always a good crowd to keep everyone having fun. A great place for college students or travelers on a budget that want to experience modern, Spanish culture.
+                    </p>
+                </div>
+            
+                <div class = "opinions">
+
+                    <img class="mainicon" src= https://png2.kisspng.com/20180304/uhe/kisspng-cafe-restaurant-cartoon-color-coffee-house-5a9c8ee17285d2.8076028615202096334691.png width="80px" height="80px">
+                    <ul>
+                        <li>Perrachica</li>
+                        <li>Madrid, Spain</li>
+                        <li>20/10/2018</li>
+                    </ul>
+                    <p>
+                        <br>
+                    While the restaurant is very beautiful and looks amazing from the outside, I had a terrible experience here. The waiters are very rude and won't serve you water if you ask for it. I will not be returning here.
+                    </p>
+                </div>
+                
+                <!--loading icon inside parent container-->
+        <div class="bottomphone" style="background-color: inherit">
+        <div class="bottomicon" style="width:inherit">
+                <span class="glyphicon glyphicon-refresh " style="font-size: 25px; padding:0; margins:0"></span>
+            <p>load more</p>
+            
         </div>
+            </div>
+            </div>
+
+            
+            
+            
+            
+            
+            
+            </div>
+            </div>
+
         
-    </div>
+        
+        
+        
+        
+        
+        
+        
+
+
 
     <!--begin footer section, including social media links and copyright-->
     <div class = "footer">
