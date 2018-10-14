@@ -18,12 +18,12 @@ This is an html file containing the html5 code to create the main page of the we
                     $(".personalinfo").show();
                     $(".personalinfo").removeClass('hide');
                     $(".lastopinions").hide();
-                    $(".middleRegistration").hide();
+                    $(".middleRegister").hide();
                 });
     
                 $(".lastopinionslink").click(function(){
                     $(".personalinfo").hide();
-                    $(".middleRegistration").hide();
+                    $(".middleRegister").hide();
                     $(".lastopinions").show(); 
                     $(".lastopinions").removeClass("hide");
                 }); 
@@ -31,18 +31,42 @@ This is an html file containing the html5 code to create the main page of the we
                 $(".mainpagelink").click(function(){
                     $(".personalinfo").hide();
                     $(".lastopinions").hide();
-                    $(".middleRegistration").hide();
+                    $(".middleRegister").hide();
                     $(".left").show();
                     $(".right").show();
                 }); 
     
-                $(".registrationinfolink").click(function(){
-                    $(".middleRegistration").show();
-                    $(".middleRegistration").removeClass('hide');
+                $(".optionsinfolink").click(function(){
+                    $(".middleOptions").show();
+                    $(".middleOptions").removeClass('hide');
                     $("div.left").hide();
                     $("div.right").hide();
                     $(".personalinfo").hide();
                     $(".lastopinions").hide();
+                    $(".middleRegister").hide();
+                    $(".middleLogin").hide();
+                });
+                
+                $("#register").click(function(){
+                    $(".middleRegister").show();
+                    $(".middleRegister").removeClass('hide');
+                    $("div.left").hide();
+                    $("div.right").hide();
+                    $(".personalinfo").hide();
+                    $(".lastopinions").hide();
+                    $(".middleOptions").hide();
+                    $(".middleLogin").hide();
+                });
+                
+                $("#login").click(function(){
+                    $(".middleLogin").show();
+                    $(".middleLogin").removeClass('hide');
+                    $("div.left").hide();
+                    $("div.right").hide();
+                    $(".personalinfo").hide();
+                    $(".lastopinions").hide();
+                    $(".middleOptions").hide();
+                    $(".middleRegister").hide();
                 });
                 
                 $("#save").click(function() {
@@ -112,8 +136,8 @@ This is an html file containing the html5 code to create the main page of the we
         </h2>
         
         <div class = "topright"> 
-            <a href="#registrationinfo" class="registrationinfolink hyper2">Log Out</a>&emsp; 
-            <a href="#logininfo" class="logininfolink hyper2">Login</a>&emsp; 
+            <a href="#registrationinfo" class="optionsinfolink hyper2">Log Out</a>&emsp; 
+            <a href="#Option 1" class="hyper2">Option 2</a>&emsp; 
             <a href="#Option 1" class="hyper2">Option 3</a>
         </div> 
     </div>
@@ -121,7 +145,27 @@ This is an html file containing the html5 code to create the main page of the we
 <!--begin middle section, including user information and a middle section to display web contents-->
     
     <div class="middle">
-          <div class = "middleRegistration hide">
+        
+        <div class = "middleOptions hide">
+            <div id = "centeredButtons">
+                <input type="button" name="register" id="register" value="Register">
+                <input type="button" name="login" id="login" value="Login">
+            </div>
+        </div>
+        
+        <div class = "middleLogin hide">
+            <h1 class = "left">Sign-In Form</h1>
+            
+            <label>*Username :</label>
+            <input type="text" name="loginUsername" id="loginUsername">
+            
+            <label>*Password :</label>
+            <input type="password" name="loginPassword" id="loginPassword">
+            
+            <input type="button" name="submit" id="submit" value="Submit">
+        </div>
+            
+          <div class = "middleRegister hide">
               <h1 class = "left">Registration Form</h1>
               <h5>* = required.</h5>
               
