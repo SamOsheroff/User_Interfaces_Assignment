@@ -6,31 +6,74 @@ Date: 27/09/18
 This is an html file containing the html5 code to create the main page of the website. The file is linked to a cascading style sheet named "Assignment1.css" which contains relevant style code. Hyperlinks have been added to the "Restaurant and Hotel", "Personal Information" and "Last Opinions" labels. The Restaurant and Hotel link guides the user back to the main page, the others guide the user their associated page.
 -->
 <html>
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Assignment_2.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
- 
-$(".personalinfolink").click(function(){
-        $(".personalinfo").show();
-         $(".personalinfo").removeClass('hide');
-         $(".lastopinions").hide();
-    }); 
-    $(".lastopinionslink").click(function(){
-        $(".personalinfo").hide();
-         $(".lastopinions").show(); $(".lastopinions").removeClass("hide");
-    }); 
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="Assignment_2.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+                $(".personalinfolink").click(function(){
+                    $(".personalinfo").show();
+                    $(".personalinfo").removeClass('hide');
+                    $(".lastopinions").hide();
+                    $(".middleRegistration").hide();
+                });
     
-    $(".mainpagelink").click(function(){
-        $(".personalinfo").hide();
-         $(".lastopinions").hide();
-    }); 
-        });
+                $(".lastopinionslink").click(function(){
+                    $(".personalinfo").hide();
+                    $(".middleRegistration").hide();
+                    $(".lastopinions").show(); 
+                    $(".lastopinions").removeClass("hide");
+                }); 
+    
+                $(".mainpagelink").click(function(){
+                    $(".personalinfo").hide();
+                    $(".lastopinions").hide();
+                    $(".middleRegistration").hide();
+                    $(".left").show();
+                    $(".right").show();
+                }); 
+    
+                $(".registrationinfolink").click(function(){
+                    $(".middleRegistration").show();
+                    $(".middleRegistration").removeClass('hide');
+                    $("div.left").hide();
+                    $("div.right").hide();
+                    $(".personalinfo").hide();
+                    $(".lastopinions").hide();
+                });
+                
+                $("#register").click(function() {
+                    var name = $("#name").val();
+                    var email = $("#email").val();
+                    var password = $("#password").val();
+                    var cpassword = $("#cpassword").val();
+                    if (name == '' || email == '' || password == '' || cpassword == '' || username == '' || dob == '' || address == '') {
+                        alert("Please fill all required fields.");
+                    } else if ((password.length) < 8) {
+                        alert("Password should at least 8 character in length.");
+                    } else if (!(password).match(cpassword)) {
+                        alert("Your passwords don't match. Try again.");
+                    } else {
+                        $.post("register.php", {
+                            name1: name,
+                            email1: email,
+                            password1: password
+                        }, function(data) {
+                            if (data == 'You have Successfully Registered.') {
+                                $("form")[0].reset();
+                            }
+                            alert(data);
+                        });
+                    }
+                });
+    
+            });
 
-</script>
-</head>
+        </script>
+    </head>
     
 <body>
      <!--begin header section, including logo, website title, and menu bar-->
@@ -43,14 +86,52 @@ $(".personalinfolink").click(function(){
         </h2>
         
         <div class = "topright"> 
-            <a href="#Option 1" class="hyper2">Option 1</a>&emsp; 
+            <a href="#registrationinfo" class="registrationinfolink hyper2">Log Out</a>&emsp; 
             <a href="#Option 1" class="hyper2">Option 2</a>&emsp; 
             <a href="#Option 1" class="hyper2">Option 3</a>
         </div> 
     </div>
     
 <!--begin middle section, including user information and a middle section to display web contents-->
+    
     <div class="middle">
+          <div class = "middleRegistration hide">
+              <h1 class = "left">Registration Form</h1>
+              <h5>* = required.</h5>
+              
+              <div class="profile">
+                <h4>Profile Picture (optional)</h4>
+                <div class="small-12 medium-2 large-2 columns">
+                    <i class="upload"></i>
+                    <input class="file-upload" type="file" accept="image/*"/>
+                </div>
+              </div>
+              
+              <form class="form" method="post" action="#">
+                  <h4>Account Information</h4>
+                    <label>*Username :</label>
+                    <input type="text" name="dusername" id="username">
+                    <label>*Password :</label>
+                    <input type="password" name="password" id="password">
+                    <label>*Confirm Password :</label>
+                    <input type="password" name="cpassword" id="cpassword">
+                  
+                  <h4>Personal Information</h4>
+                    <label>*Name :</label>
+                    <input type="text" name="dname" id="name">
+                    <label>*Surname :</label>
+                    <input type="text" name="dsurname" id="surname">
+                    <label>*Email :</label>
+                    <input type="text" name="demail" id="email">
+                    <label>*Date of Birth (dd/mm/yyyy) :</label>
+                    <input type="text" name="ddob" id="dob">
+                    <label>*Address :</label>
+                    <input type="text" name="daddress" id="daddress">
+                  <input type="button" name="save" id="save" value="Save">
+                  <input type="button" name="delete" id="delete" value="Delete">
+              </form>
+              
+            </div>
         
         <!--begin left middle section, including user information and previews of reviews-->
         <div class="left">
@@ -119,9 +200,9 @@ $(".personalinfolink").click(function(){
             
         </div>
         
+        
         <!--begin right middle section, space to display user content-->
         <div class="right">
-                <button>button</button>
 
             <!--begin personal information section, to be shown when personal information link is clicked and hidden otherwise-->    
             <div class="personalinfo hide">

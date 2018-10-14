@@ -139,6 +139,18 @@ br{display:block;
         background-color: inherit;
 
 }
+
+    div.middleRegistration{
+        width: 98%;
+        padding: 20px 20px 20px 20px;
+        margin: 10px 1% 10px 1%;
+        overflow:hidden;
+        float:left;
+        background-color:#e6f9ff;
+        border: 3px solid #404040;
+        border-radius:5px;
+        border-style:groove;
+    }
     div.left {
         width: 31.5%;
         padding: 20px 20px 20px 20px;
@@ -196,7 +208,7 @@ br{display:block;
         border-radius:5px;
         padding: 10px;
         left: 0;
-        margin: 10px 8px 0 5px;
+        margin: 10px 1% 0 1%;
         width: 98%;
         height: 40px; 
 }
@@ -375,3 +387,20 @@ br{display:block;
     p.rest{
         margin-left: 0;
 }
+
+    #save, #delete {
+        font-size: 20px;
+        margin-top: 15px;
+        background: #588BAE;
+        border: 1px solid #588BAE;
+        padding: 7px 7px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    #save:hover, #delete:hover{
+        background: #4F97a3;
+    }
+
