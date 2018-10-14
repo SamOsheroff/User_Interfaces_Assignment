@@ -45,18 +45,35 @@ This is an html file containing the html5 code to create the main page of the we
                     $(".lastopinions").hide();
                 });
                 
-                $("#register").click(function() {
+                $("#save").click(function() {
                     var name = $("#name").val();
-                    var email = $("#email").val();
+                    $('#firstname').val(name);
+                    
+                    var surname = $("#dsurname").val();
+                    $('#surname').val(surname);
+                    
+                    var address = $("#daddress").val();
+                    $('#address').val(address);
+                    
+                    var dob = $("#ddob").val();
+                    $('#dob').val(dob);
+                    
+                    var email = $("#demail").val();
+                    $('#email').val(email);
+                    
                     var password = $("#password").val();
                     var cpassword = $("#cpassword").val();
+
+
                     if (name == '' || email == '' || password == '' || cpassword == '' || username == '' || dob == '' || address == '') {
                         alert("Please fill all required fields.");
                     } else if ((password.length) < 8) {
                         alert("Password should at least 8 character in length.");
                     } else if (!(password).match(cpassword)) {
                         alert("Your passwords don't match. Try again.");
-                    } else {
+                    } else if ($agree.prop("checked" == false)){
+                        alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); 
+                    }else {
                         $.post("register.php", {
                             name1: name,
                             email1: email,
@@ -69,6 +86,15 @@ This is an html file containing the html5 code to create the main page of the we
                         });
                     }
                 });
+                
+                 $("#delete").click(function() {
+                    $('#registration')[0].reset();
+                    $('#firstname').val("Juan");
+                    $('#surname').val("Rios");
+                    $('#address').val("Calle de Fuencarral, 123");
+                    $('#dob').val("12/12/1995");
+                    $('#email').val("juan.rios@gmail.com");
+                 });
     
             });
 
@@ -87,7 +113,7 @@ This is an html file containing the html5 code to create the main page of the we
         
         <div class = "topright"> 
             <a href="#registrationinfo" class="registrationinfolink hyper2">Log Out</a>&emsp; 
-            <a href="#Option 1" class="hyper2">Option 2</a>&emsp; 
+            <a href="#logininfo" class="logininfolink hyper2">Login</a>&emsp; 
             <a href="#Option 1" class="hyper2">Option 3</a>
         </div> 
     </div>
@@ -107,7 +133,7 @@ This is an html file containing the html5 code to create the main page of the we
                 </div>
               </div>
               
-              <form class="form" method="post" action="#">
+              <form id = "registration" class="form" method="post" action="#">
                   <h4>Account Information</h4>
                     <label>*Username :</label>
                     <input type="text" name="dusername" id="username">
@@ -118,15 +144,18 @@ This is an html file containing the html5 code to create the main page of the we
                   
                   <h4>Personal Information</h4>
                     <label>*Name :</label>
-                    <input type="text" name="dname" id="name">
+                    <input type="text" name="name" id="name">
                     <label>*Surname :</label>
-                    <input type="text" name="dsurname" id="surname">
+                    <input type="text" name="dsurname" id="dsurname">
                     <label>*Email :</label>
-                    <input type="text" name="demail" id="email">
+                    <input type="text" name="demail" id="demail">
                     <label>*Date of Birth (dd/mm/yyyy) :</label>
-                    <input type="text" name="ddob" id="dob">
+                    <input type="text" name="ddob" id="ddob">
                     <label>*Address :</label>
                     <input type="text" name="daddress" id="daddress">
+                  
+                  <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions and Privacy Policy
+                  
                   <input type="button" name="save" id="save" value="Save">
                   <input type="button" name="delete" id="delete" value="Delete">
               </form>
@@ -209,12 +238,12 @@ This is an html file containing the html5 code to create the main page of the we
             <div class = "col-3 menu">
                     <h1 class = "left">Personal Information</h1>
                     <ul>
-                        <li class = "structure"><input type="text" name="firstname" value="Name"></li>
-                        <li class = "structure"><input type="text" name="firstname" value="Surname"></li>
-                        <li><input type="text" name="firstname" value="Email"></li>
-                        <li class = "structure"><input type="text" name="firstname" value="Address"></li>
-                        <li class = "structure"><input type="text" name="firstname" value="Mobile Phone"></li>
-                        <li><input type="text" name="firstname" value="Birthday"></li>
+                        <li class = "structure"><input id = "firstname" type="text" name="Juan" value="Juan"></li>
+                        <li class = "structure"><input id = "surname" type="text" name="Rios" value="Surname"></li>
+                        <li><input id = "email" type="text" name="email" value="juan.rios@gmail.com"></li>
+                        <li class = "structure"><input id = "address" type="text" name="Calle de Fuencarral, 123" value="Address"></li>
+                        <li class = "structure"><input type="text" name="phone" value="745 902 543"></li>
+                        <li><input id = "dob" type="text" name="dob" value="12/12/1995"></li>
                     </ul>
                 </div>
                 <!-- begin section with dummy information for app activity placed in icons, also under to be shown when personal information link is clicked -->
