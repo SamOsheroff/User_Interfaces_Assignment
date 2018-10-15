@@ -127,15 +127,31 @@ This is an html file containing the html5 code to create the main page of the we
                 });
            });
             
+        </script>
+        
+        <script>
 
+   
 function newprefbox() {
-    var newinputhtml="<input type='text' class='prefbox' size='10'>"
-    var newxbuttonhtml="<span class='glyphicon glyphicon-remove newbox' onclick='deleteprefbox(event)'></span>"
-    var newdivhtml="<div class='prefbox' id='new'>" + newinputhtml + newxbuttonhtml + "</div>"
-    
+    var prefboxesfilled = true;
+    var x = document.getElementsByClassName("prefbox");
+    for (i = 0; i < x.length; i++) {
+        if (x[i].firstChild.nodeType==1) {
+            if (x[i].firstChild.value=='') {
+                prefboxesfilled = false
+            }
+        }
+    };    
+    if (prefboxesfilled == true){
+            makeaprefbox()
+    }
+}
+function makeaprefbox(){     
+    var newinputhtml="<input type='text' class='newpref' size='7' required>";
+    var newxbuttonhtml="<span class='glyphicon glyphicon-remove newbox' onclick='deleteprefbox(event)'></span>";
+    var newdivhtml="<div class='prefbox newprefbox' id='new'>" + newinputhtml + newxbuttonhtml + "</div>";
     $("#left").append(newdivhtml)  
 }
-
 
  function deleteprefbox(event) {
      var x=event.target;
@@ -299,6 +315,9 @@ function newprefbox() {
         
         <!--begin right middle section, space to display user content-->
         <div class="right">
+            <p id="demo">demo</p>
+
+            
 
             <!--begin personal information section, to be shown when personal information link is clicked and hidden otherwise-->    
             <div class="personalinfo hide">
