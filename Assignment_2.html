@@ -128,10 +128,9 @@ This is an html file containing the html5 code to create the main page of the we
            });
             
         </script>
-        
+<!-- begin scripts for the creation and deletion of new preference boxes, seperate from the jQuery scripts because these new boxes do not exist on page startup-->
         <script>
 
-   
 function newprefbox() {
     var prefboxesfilled = true;
     var x = document.getElementsByClassName("prefbox");
@@ -160,10 +159,18 @@ function makeaprefbox(){
 
         
         </script>
+        
+        
+        
     </head>
     
 <body>
-     <!--begin header section, including logo, website title, and menu bar-->
+     
+
+
+    
+    
+    <!--begin header section, including logo, website title, and menu bar-->
 
     <div class = "top"> 
 
@@ -268,17 +275,17 @@ function makeaprefbox(){
             
             <ul class="left">
                 <li class="hyper">
-                    <a href="#Opinion 1" class="hyper">100 Montaditos, Madrid, Spain</a>
+                    <a href="#100 Montaditos" class="hyper" id="btnAA">100 Montaditos, Madrid, Spain</a>
                 </li>
                 <li class="beta">
                     <i>September 1, 2017 - </i> This is a great cheap optio...</li>
                 <li class="hyper">
-                    <a href="#Opinion 2" class="hyper">Perrachica, Madrid, Spain</a>
+                    <a href="#Perrachica" class="hyper" id="btnBB">Perrachica, Madrid, Spain</a>
                 </li>
                 <li class="beta">
                     <i>November 14, 2017 - </i> While the restaurant is ver...</li>
                 <li class="hyper">
-                    <a href="#Opinion 3" class="hyper">Starbucks, Madrid, Spain</a>
+                    <a href="#Starbucks" class="hyper" id="btnCC">Starbucks, Madrid, Spain</a>
                 </li>
                 <li class="beta">
                     <i>January 12, 2018 - </i>I got my phone stolen here, ...</li>
@@ -315,6 +322,7 @@ function makeaprefbox(){
         
         <!--begin right middle section, space to display user content-->
         <div class="right">
+
             <p id="demo">demo</p>
 
             
@@ -348,7 +356,7 @@ function makeaprefbox(){
 
                         <img class="mainicon" src= https://cdn.designxel.com/wp-content/uploads/2017/09/cartoon-pizza-restaurant-vector-ai.jpg width="80px" height="80px" >
                     <ul>
-                        <li>100 Montaditos</li>
+                        <li><a href=#100montaditos id="btnA">100 Montaditos</a></li>
                         <li>Madrid, Spain</li>
                         20/09/2018
                     </ul>
@@ -362,7 +370,7 @@ function makeaprefbox(){
 
                     <img class="mainicon" src= https://png2.kisspng.com/20180304/uhe/kisspng-cafe-restaurant-cartoon-color-coffee-house-5a9c8ee17285d2.8076028615202096334691.png width="80px" height="80px">
                     <ul>
-                        <li>Perrachica</li>
+                        <li><a href=#Perrachica id="btnB">Perrachica</a></li>
                         <li>Madrid, Spain</li>
                         <li>20/10/2018</li>
                     </ul>
@@ -412,6 +420,109 @@ function makeaprefbox(){
             </p>
 
     </div>
+            
+    <!-- begin content section of popup information boxes to display on clicking restaurant name -->
+<div id="modalA" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close closepopup">&times;</span>
+      <h2>100 Montaditos : Information</h2>
+    </div>
+    <div class="modal-body">
+      <p>Information about 100 Montaditos</p>
+    </div>
+
+  </div>
+
+</div>
+<div id="modalB" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close closepopup">&times;</span>
+      <h2>Perrachica : Information</h2>
+    </div>
+    <div class="modal-body">
+      <p>Information about Perrachica</p>
+    </div>
+
+  </div>
+
+</div>
+    
+<div id="modalC" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close closepopup">&times;</span>
+      <h2>Starbucks : Information</h2>
+    </div>
+    <div class="modal-body">
+      <p>Information about Starbucks</p>
+    </div>
+
+  </div>
+
+</div>
+ <!-- begin scripts for the opening and closing of popup information boxes -->
+    
+    
+    <script>
+//script to control first modal display
+var modalA = document.getElementById('modalA');
+var btnA = document.getElementById("btnA");
+var spanA = document.getElementsByClassName("closepopup")[0];
+btnA.onclick = function() {
+        modalA.style.display = "block";
+}
+spanA.onclick = function() {
+    modalA.style.display = "none";
+}
+
+//script to control second modal display
+var modalB = document.getElementById('modalB');
+var btnB = document.getElementById("btnB");
+var spanB = document.getElementsByClassName("closepopup")[1];
+btnB.onclick = function() {
+        modalB.style.display = "block";
+}
+spanB.onclick = function() {
+    modalB.style.display = "none";
+}
+//script to control third modal display, as well as allowing user to close popups by clicking outside the popup box
+var modalC = document.getElementById('modalC');
+var btnC = document.getElementById("btnC");
+var spanC = document.getElementsByClassName("closepopup")[2];
+//btnC.onclick = function() {
+//        modalC.style.display = "block";
+// }
+spanC.onclick = function() {
+   modalC.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modalC || event.target == modalB || event.target == modalA) {
+        modalC.style.display = "none";
+        modalB.style.display = "none";
+        modalA.style.display = "none";
+    }
+}
+
+//alternate script to display first modal from different link
+var btnAA=document.getElementById("btnAA")
+btnAA.onclick = function() {
+        modalA.style.display = "block";
+}   
+//alternate script to display second modal from different link
+var btnBB=document.getElementById("btnBB")
+btnBB.onclick = function() {
+        modalB.style.display = "block";
+} 
+//alternate script to display third modal from different link
+var btnCC=document.getElementById("btnCC")
+btnCC.onclick = function() {
+        modalC.style.display = "block";
+}      
+        
+        
+    </script>   
 </body>
 </html>
 
