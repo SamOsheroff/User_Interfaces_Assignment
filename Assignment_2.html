@@ -120,8 +120,30 @@ This is an html file containing the html5 code to create the main page of the we
                     $('#email').val("juan.rios@gmail.com");
                  });
     
-            });
+ 
+            
+                $("span.glyphicon-remove").click(function(){
+                    $(this).parent().remove();
+                });
+           });
+            
 
+function newprefbox() {
+    var newinputhtml="<input type='text' class='prefbox' size='10'>"
+    var newxbuttonhtml="<span class='glyphicon glyphicon-remove newbox' onclick='deleteprefbox(event)'></span>"
+    var newdivhtml="<div class='prefbox' id='new'>" + newinputhtml + newxbuttonhtml + "</div>"
+    
+    $("#left").append(newdivhtml)  
+}
+
+
+ function deleteprefbox(event) {
+     document.getElementById("demo").innerHTML="delete"
+     var x=event.target;
+     x.parentElement.style.display="none"
+}
+
+        
         </script>
     </head>
     
@@ -207,7 +229,7 @@ This is an html file containing the html5 code to create the main page of the we
             </div>
         
         <!--begin left middle section, including user information and previews of reviews-->
-        <div class="left">
+        <div class="left" id="left">
 
             <h1 class="left">
                 <img class="leftone" src=https://openclipart.org/download/386/Gerald-G-Man-Face-4-World-Label.svg width="25px" height="25px" float="left">
@@ -249,33 +271,36 @@ This is an html file containing the html5 code to create the main page of the we
             
             <hr class="left">
             
-            <h2 class="lefttwo">
+         <h2 class="lefttwo">
                 My preferences
-                <div class="plus">
-                    <span class="glyphicon glyphicon-plus"></span>
+                <div style="float:right" class="plusbutton">
+                    <span class="glyphicon glyphicon-plus" onclick="newprefbox()"></span>
+
                 </div>
             </h2>
             
             <div class="prefbox">
                 Weekend
-                <span class="glyphicon glyphicon-remove"></span>
+                <span class="glyphicon glyphicon-remove" onclick="deleteprefbox()"></span>
             </div>
             
             <div class="prefbox">
-                Friends
-                <span class="glyphicon glyphicon-remove"></span>
+                friends
+                <span class="glyphicon glyphicon-remove" onclick="deleteprefbox()"></span>
             </div>
             
             <div class="prefbox">
                 Travel
-                <span class="glyphicon glyphicon-remove"></span>
+                <span class="glyphicon glyphicon-remove" onclick="deleteprefbox()"></span>
             </div>
             
         </div>
+
         
         
         <!--begin right middle section, space to display user content-->
         <div class="right">
+            <p id="demo">demo</p>
 
             <!--begin personal information section, to be shown when personal information link is clicked and hidden otherwise-->    
             <div class="personalinfo hide">

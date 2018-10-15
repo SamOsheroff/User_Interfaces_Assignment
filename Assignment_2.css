@@ -32,6 +32,11 @@ Date: 27/09/2018
         border: none;
     }
 
+.prefbox{
+    display:flex;
+}
+
+
 /*succeeding classes add structure and style for the tablet version of the webpage*/
     div.toptablet {
         overflow: auto;
