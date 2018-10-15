@@ -136,7 +136,7 @@ function newprefbox() {
     var x = document.getElementsByClassName("prefbox");
     for (i = 0; i < x.length; i++) {
         if (x[i].firstChild.nodeType==1) {
-            if (x[i].firstChild.value=='') {
+            if (x[i].firstChild.value=='' && x[i].firstChild.style.display=="none") {
                 prefboxesfilled = false
             }
         }
