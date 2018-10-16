@@ -136,7 +136,7 @@ function newprefbox() {
     var x = document.getElementsByClassName("prefbox");
     for (i = 0; i < x.length; i++) {
         if (x[i].firstChild.nodeType==1) {
-            if (x[i].firstChild.value=='' && x[i].firstChild.style.display=="none") {
+            if (x[i].firstChild.value=='') {
                 prefboxesfilled = false
             }
         }
@@ -154,7 +154,7 @@ function makeaprefbox(){
 
  function deleteprefbox(event) {
      var x=event.target;
-     x.parentElement.style.display="none"
+     x.parentElement.remove()
 }
 
         
