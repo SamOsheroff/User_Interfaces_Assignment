@@ -97,16 +97,11 @@ This is an html file containing the html5 code to create the main page of the we
                         alert("Your passwords don't match. Try again.");
                     } else if ($agree.prop("checked" == false)){
                         alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); 
-                    }else {
-                        $.post("register.php", {
-                            name1: name,
-                            email1: email,
-                            password1: password
-                        }, function(data) {
-                            if (data == 'You have Successfully Registered.') {
-                                $("form")[0].reset();
-                            }
-                            alert(data);
+                    }else if(checkCookie(email)){
+                        alert("An account already exists with that email.");
+                    } else {
+                       setCookie(email, name, surname, password, dob, address);
+                        alert("Cookie set.")
                         });
                     }
                 });
@@ -158,6 +153,22 @@ function makeaprefbox(){
 }
 
         
+        </script>
+        
+        <script>
+             function setCookie(email, name, surname, password, dob, address){
+                var obj = { name: name, surname: surname, password: password, dob: dob, address: address };
+                $.cookie(email, $.param(obj), { expires: 1 });
+                alert("Cookie Set.");
+            }
+            
+            //if an account already exists with that email returns true else returns false
+            function checkCookie(email){
+                if(Request.$cookies[email] != null){
+                    return true;
+                }else{
+                    return false;
+                }
         </script>
         
         
