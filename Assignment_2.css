@@ -99,7 +99,8 @@ Date: 27/09/2018
     color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {padding: 2px 16px 16px 16px;
+}
 
 .modal-footer {
     padding: 2px 16px;
@@ -107,6 +108,7 @@ Date: 27/09/2018
     color: white;
     float:inherit;
 }
+
 
 
 
@@ -213,8 +215,22 @@ br{display:block;
         margin-top:20px;
 }
 
-    ul{
+ul{
         list-style: none;
+}
+
+ul.modalList{
+    list-style:disc;
+    margin: 15px 0 0 0;
+    overflow: auto;
+    float:inherit;
+    padding: 0 0 0 25px
+}
+a.sitelink{
+     text-decoration:underline;
+}
+img.spaced{
+    padding: 0 0 0 0
 }
 
     div.circles{
@@ -396,10 +412,10 @@ br{display:block;
         margin:0;
         padding: 0 0 0 15px;
 }
-
-    li{
+x
+li{
         font-size: 14px;
-        padding: 2.5px 0 0 2.5px
+        padding: 0 0 2.5px 0
 }
 
     .hyper{
@@ -448,6 +464,17 @@ br{display:block;
     .inline{
         float: right;
 }
+
+.glyphicon-remove{
+    padding: 1px 0 0 2px
+}
+
+.newpref{
+    min-width:50px;
+    max-width:100px;
+    text-align:center;
+}
+
 
     div.circles{
         position: static;
