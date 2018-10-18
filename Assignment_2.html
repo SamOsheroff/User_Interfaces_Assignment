@@ -2,7 +2,6 @@
 <!--
 Authors: Sam Osheroff and Tamasha Pathirathna
 Date: 27/09/18
-
 This is an html file containing the html5 code to create the main page of the website. The file is linked to a cascading style sheet named "Assignment1.css" which contains relevant style code. Hyperlinks have been added to the "Restaurant and Hotel", "Personal Information" and "Last Opinions" labels. The Restaurant and Hotel link guides the user back to the main page, the others guide the user their associated page.
 -->
 <html>
@@ -87,21 +86,24 @@ This is an html file containing the html5 code to create the main page of the we
                     
                     var password = $("#password").val();
                     var cpassword = $("#cpassword").val();
-
-
                     if (name == '' || email == '' || password == '' || cpassword == '' || username == '' || dob == '' || address == '') {
                         alert("Please fill all required fields.");
                     } else if ((password.length) < 8) {
                         alert("Password should at least 8 character in length.");
                     } else if (!(password).match(cpassword)) {
                         alert("Your passwords don't match. Try again.");
-                    } else if ($agree.prop("checked" == false)){
+                    } else if (!$("#agree").is(":checked")){
                         alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); 
-                    }else if(checkCookie(email)){
-                        alert("An account already exists with that email.");
-                    } else {
-                       setCookie(email, name, surname, password, dob, address);
-                        alert("Cookie set.")
+                    }else {
+                        $.post("register.php", {
+                            name1: name,
+                            email1: email,
+                            password1: password
+                        }, function(data) {
+                            if (data == 'You have Successfully Registered.') {
+                                $("form")[0].reset();
+                            }
+                            alert(data);
                         });
                     }
                 });
@@ -125,13 +127,12 @@ This is an html file containing the html5 code to create the main page of the we
         </script>
 <!-- begin scripts for the creation and deletion of new preference boxes, seperate from the jQuery scripts because these new boxes do not exist on page startup-->
         <script>
-
 function newprefbox() {
     var prefboxesfilled = true;
     var x = document.getElementsByClassName("prefbox");
     for (i = 0; i < x.length; i++) {
         if (x[i].firstChild.nodeType==1) {
-            if (x[i].firstChild.value=='' && ) {
+            if (x[i].firstChild.value=='') {
                 prefboxesfilled = false
             }
         }
@@ -146,29 +147,11 @@ function makeaprefbox(){
     var newdivhtml="<div class='prefbox newprefbox' id='new'>" + newinputhtml + newxbuttonhtml + "</div>";
     $("#left").append(newdivhtml)  
 }
-
  function deleteprefbox(event) {
      var x=event.target;
      x.parentElement.remove()
 }
-
         
-        </script>
-        
-        <script>
-             function setCookie(email, name, surname, password, dob, address){
-                var obj = { name: name, surname: surname, password: password, dob: dob, address: address };
-                $.cookie(email, $.param(obj), { expires: 1 });
-                alert("Cookie Set.");
-            }
-            
-            //if an account already exists with that email returns true else returns false
-            function checkCookie(email){
-                if(Request.$cookies[email] != null){
-                    return true;
-                }else{
-                    return false;
-                }
         </script>
         
         
@@ -553,7 +536,6 @@ btnA.onclick = function() {
 spanA.onclick = function() {
     modalA.style.display = "none";
 }
-
 //script to control second modal display
 var modalB = document.getElementById('modalB');
 var btnB = document.getElementById("btnB");
@@ -581,7 +563,6 @@ window.onclick = function(event) {
         modalA.style.display = "none";
     }
 }
-
 //alternate script to display first modal from different link
 var btnAA=document.getElementById("btnAA")
 btnAA.onclick = function() {
@@ -602,4 +583,3 @@ btnCC.onclick = function() {
     </script>   
 </body>
 </html>
-
