@@ -31,6 +31,7 @@ This is an html file containing the html5 code to create the main page of the we
                     $(".personalinfo").hide();
                     $(".lastopinions").hide();
                     $(".middleRegister").hide();
+                    $(".middleOptions").hide();
                     $(".left").show();
                     $(".right").show();
                 }); 
@@ -68,6 +69,8 @@ This is an html file containing the html5 code to create the main page of the we
                     $(".middleRegister").hide();
                 });
                 
+                
+                
                 $("#save").click(function() {
                     var name = $("#name").val();
                     $('#firstname').val(name);
@@ -86,6 +89,7 @@ This is an html file containing the html5 code to create the main page of the we
                     
                     var password = $("#password").val();
                     var cpassword = $("#cpassword").val();
+                    
                     if (name == '' || email == '' || password == '' || cpassword == '' || username == '' || dob == '' || address == '') {
                         alert("Please fill all required fields.");
                     } else if ((password.length) < 8) {
@@ -94,17 +98,8 @@ This is an html file containing the html5 code to create the main page of the we
                         alert("Your passwords don't match. Try again.");
                     } else if (!$("#agree").is(":checked")){
                         alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); 
-                    }else {
-                        $.post("register.php", {
-                            name1: name,
-                            email1: email,
-                            password1: password
-                        }, function(data) {
-                            if (data == 'You have Successfully Registered.') {
-                                $("form")[0].reset();
-                            }
-                            alert(data);
-                        });
+                    } else {
+                        setCookie(email, name, surname, password, dob, address);
                     }
                 });
                 
@@ -116,8 +111,6 @@ This is an html file containing the html5 code to create the main page of the we
                     $('#dob').val("12/12/1995");
                     $('#email').val("juan.rios@gmail.com");
                  });
-    
- 
             
                 $("span.glyphicon-remove").click(function(){
                     $(this).parent().remove();
@@ -152,6 +145,32 @@ function makeaprefbox(){
      x.parentElement.remove()
 }
         
+        </script>
+        
+        <script>
+             function setCookie(email, name, surname, password, dob, address){
+                var obj = Name + "=" + name + ";" + Surname + "=" surname + ";" + Password "=" password + ";" + Dob "=" dob + ";" + Address "=" address};
+                alert(obj);
+                document.cookie = email + "=" + obj + "; path=/";
+                alert($.cookie(email));
+
+            }
+            
+            function getCookie(cname) {
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+    }
+    return "";
+}
         </script>
         
         
