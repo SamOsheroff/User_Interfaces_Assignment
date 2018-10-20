@@ -85,7 +85,7 @@ This is an html file containing the html5 code to create the main page of the we
                     $('#dob').val(dob);
                     
                     var email = $("#demail").val();
-                    $('#email').val(email);
+                     $('#email').val(email);
                     
                     var password = $("#password").val();
                     var cpassword = $("#cpassword").val();
@@ -98,8 +98,11 @@ This is an html file containing the html5 code to create the main page of the we
                         alert("Your passwords don't match. Try again.");
                     } else if (!$("#agree").is(":checked")){
                         alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); 
+                    } else if(getCookie(email)){
+                        alert("There is already an account with that email.")
                     } else {
                         setCookie(email, name, surname, password, dob, address);
+                        $('#registration')[0].reset();
                     }
                 });
                 
@@ -149,27 +152,24 @@ function makeaprefbox(){
         
         <script>
              function setCookie(email, name, surname, password, dob, address){
-                var obj = Name + "=" + name + ";" + Surname + "=" surname + ";" + Password "=" password + ";" + Dob "=" dob + ";" + Address "=" address};
-                alert(obj);
-                document.cookie = email + "=" + obj + "; path=/";
-                alert($.cookie(email));
-
-            }
+                 var obj = "Account Information=" + name + "," + surname + "," + password + "," + dob + "," +address;
+                 document.cookie = email + "=" + obj + "; path=/";
+}
             
             function getCookie(cname) {
                 var name = cname + "=";
                 var decodedCookie = decodeURIComponent(document.cookie);
                 var ca = decodedCookie.split(';');
                 for(var i = 0; i <ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                    return true;
+                    }
                 }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-    }
-    return "";
+                return false;
 }
         </script>
         
@@ -205,6 +205,7 @@ function makeaprefbox(){
         
         <div class = "middleOptions hide">
             <div id = "centeredButtons">
+                <button onclick = "getCookie(tamashap123@gmail.com)">Click</button>
                 <input type="button" name="register" id="register" value="Register">
                 <input type="button" name="login" id="login" value="Login">
             </div>
