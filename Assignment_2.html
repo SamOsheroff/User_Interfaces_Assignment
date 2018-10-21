@@ -24,6 +24,7 @@ This is an html file containing the html5 code to create the main page of the we
                     $(".personalinfo").removeClass('hide');
                     $(".lastopinions").hide();
                     $(".middleRegister").hide();
+                    
                 });
     
                 $(".lastopinionslink").click(function(){
@@ -40,6 +41,7 @@ This is an html file containing the html5 code to create the main page of the we
                     $(".middleOptions").hide();
                     $(".left").show();
                     $(".right").show();
+                    $(".middleLogin").hide();
                 }); 
     
                 $(".optionsinfolink").click(function(){
@@ -128,6 +130,23 @@ This is an html file containing the html5 code to create the main page of the we
             
                 $("span.glyphicon-remove").click(function(){
                     $(this).parent().remove();
+                });
+                
+                $("#submit").click(function() {
+                    var checkEmail = $("#loginEmail").val();
+                    var checkPass = $("#loginPassword").val();
+                    var checkCookie = getCookie(checkEmail);
+                    
+                    if(checkCookie.length > 2){
+                        var password = checkCookie.split(",")[2];
+                        if(password.match(checkPass)){
+                           $('.mainpagelink')[0].click();
+                        }else{
+                            alert("Try a different password.")
+                        }
+                    }else{
+                        alert("There is no account with that email.")
+                    }
                 });
            });
             
@@ -232,7 +251,6 @@ function makeaprefbox(){
         
         <div class = "middleOptions hide">
             <div id = "centeredButtons">
-                <button onclick = "getCookie(tamashap123@gmail.com)">Click</button>
                 <input type="button" name="register" id="register" value="Register">
                 <input type="button" name="login" id="login" value="Login">
             </div>
@@ -241,8 +259,9 @@ function makeaprefbox(){
         <div class = "middleLogin hide">
             <h1 class = "left">Sign-In Form</h1>
             
-            <label>*Username :</label>
-            <input type="text" name="loginUsername" id="loginUsername">
+            
+            <label>*Email :</label>
+            <input type="text" name="loginEmail" id="loginEmail">
             
             <label>*Password :</label>
             <input type="password" name="loginPassword" id="loginPassword">
@@ -310,7 +329,7 @@ function makeaprefbox(){
             
             <h2 class="lefttwo">
                 <a href = "#lastopinions"
-                   class="lastopinionslink">Last opinions</a>
+                   class="lastopinionslink" >Last opinions</a>
             </h2>
             
             <ul class="left">
