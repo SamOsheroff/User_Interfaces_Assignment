@@ -517,6 +517,6 @@ li{
         width: 100%;
     }
 
-    #save:hover, #delete:hover, #login:hover, #register:hover, #submit:hover{
+    #save:hover, #delete:hover, #login:hover, #register:hover, #submit:hover, #update:hover{
         background: #4F97a3;
     }

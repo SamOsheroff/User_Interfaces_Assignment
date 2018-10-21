@@ -13,6 +13,12 @@ This is an html file containing the html5 code to create the main page of the we
         
         <script>
             $(document).ready(function(){
+                    $('#firstname').val("Juan");
+                    $('#surname').val("Rios");
+                    $('#address').val("Calle de Fuencarral, 123");
+                    $('#dob').val("12/12/1995");
+                    $('#email').val("juan.rios@gmail.com");
+                
                 $(".personalinfolink").click(function(){
                     $(".personalinfo").show();
                     $(".personalinfo").removeClass('hide');
@@ -75,6 +81,9 @@ This is an html file containing the html5 code to create the main page of the we
                     var name = $("#name").val();
                     $('#firstname').val(name);
                     
+                    var username = $("#username").val();
+                    currentUser.innerText = username;
+                    
                     var surname = $("#dsurname").val();
                     $('#surname').val(surname);
                     
@@ -98,7 +107,7 @@ This is an html file containing the html5 code to create the main page of the we
                         alert("Your passwords don't match. Try again.");
                     } else if (!$("#agree").is(":checked")){
                         alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); 
-                    } else if(getCookie(email)){
+                    } else if(getCookie(email).length > 2){
                         alert("There is already an account with that email.")
                     } else {
                         setCookie(email, name, surname, password, dob, address);
@@ -107,7 +116,9 @@ This is an html file containing the html5 code to create the main page of the we
                 });
                 
                  $("#delete").click(function() {
-                    $('#registration')[0].reset();
+                     var cname = $("#demail").val();
+                     $('#registration')[0].reset();
+                     document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                     $('#firstname').val("Juan");
                     $('#surname').val("Rios");
                     $('#address').val("Calle de Fuencarral, 123");
@@ -153,7 +164,10 @@ function makeaprefbox(){
         <script>
              function setCookie(email, name, surname, password, dob, address){
                  var obj = "Account Information=" + name + "," + surname + "," + password + "," + dob + "," +address;
-                 document.cookie = email + "=" + obj + "; path=/";
+                 var date = new Date();
+                 date.setTime(date.getTime() + (1*24*60*60*1000));
+                 var expires = "expires="+ date.toUTCString();
+                 document.cookie = email + "=" + obj + ";" + expires + "; path=/";
 }
             
             function getCookie(cname) {
@@ -166,11 +180,24 @@ function makeaprefbox(){
                         c = c.substring(1);
                     }
                     if (c.indexOf(name) == 0) {
-                    return true;
+                    return c.substring(name.length, c.length);
                     }
                 }
-                return false;
+                return "";
+                
 }
+            function changeCookie(cname, name, surname, dob,add){
+                if(getCookie(cname).length > 2){
+                    var password = getCookie(cname).split(",")[2];
+                    document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    setCookie(cname, name, surname, password, dob, add);
+                    alert("Information Updated!")
+                    
+                }else{
+                    alert("No account associated with that email.")
+                }
+}
+
         </script>
         
         
@@ -238,7 +265,7 @@ function makeaprefbox(){
               <form id = "registration" class="form" method="post" action="#">
                   <h4>Account Information</h4>
                     <label>*Username :</label>
-                    <input type="text" name="dusername" id="username">
+                    <input type="text" name="dusername" id="username" >
                     <label>*Password :</label>
                     <input type="password" name="password" id="password">
                     <label>*Confirm Password :</label>
@@ -267,9 +294,8 @@ function makeaprefbox(){
         <!--begin left middle section, including user information and previews of reviews-->
         <div class="left" id="left">
 
-            <h1 class="left">
-                <img class="leftone" src=https://openclipart.org/download/386/Gerald-G-Man-Face-4-World-Label.svg width="25px" height="25px" float="left">
-                Juan-Rios
+            <h1 id = "currentUser" class="left">
+                <img class="leftone" src=https://openclipart.org/download/386/Gerald-G-Man-Face-4-World-Label.svg width="25px" height="25px" float="left"> Juan-Rios
             </h1>
             
             <h2 class="leftone" float="right">
@@ -347,12 +373,21 @@ function makeaprefbox(){
                     <h1 class = "left">Personal Information</h1>
                     <ul>
                         <li class = "structure"><input id = "firstname" type="text" name="Juan" value="Juan"></li>
+                        
                         <li class = "structure"><input id = "surname" type="text" name="Rios" value="Surname"></li>
+                        
                         <li><input id = "email" type="text" name="email" value="juan.rios@gmail.com"></li>
+                        
                         <li class = "structure"><input id = "address" type="text" name="Calle de Fuencarral, 123" value="Address"></li>
+                        
                         <li class = "structure"><input type="text" name="phone" value="745 902 543"></li>
+                        
                         <li><input id = "dob" type="text" name="dob" value="12/12/1995"></li>
+                        
                     </ul>
+                
+                <input type="button" name="update" id="update" value="Update Information" onclick= "changeCookie(document.getElementById('email').value, document.getElementById('firstname').value, document.getElementById('surname').value, document.getElementById('dob').value, document.getElementById('address').value)">
+                
                 </div>
                 <!-- begin section with dummy information for app activity placed in icons, also under to be shown when personal information link is clicked -->
                 <div style= "position:relative left:0 right: 0 bottom:0">
