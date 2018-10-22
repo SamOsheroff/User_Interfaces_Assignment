@@ -6,10 +6,27 @@ This is an html file containing the html5 code to create the main page of the we
 -->
 <html>
     <head>
+        <!-- include Bootstrap stylesheet for access to glyphicons-->
+        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <!-- include external stylesheet-->
+        
         <link rel="stylesheet" href="Assignment_2.css">
         
+        <!-- include jQuery library-->
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <!-- includes for unitegallery scripts and stylesheets, used to create the rotating image carousel -->
+        
+        <script type='text/javascript' src='unitegallery/js/unitegallery.min.js'></script> 
+		<link rel='stylesheet' href='unitegallery/css/unite-gallery.css' type='text/css'> 
+		<script type='text/javascript' src='unitegallery/themes/default/ug-theme-default.js'></script> 
+		<link rel='stylesheet' href='unitegallery/themes/default/ug-theme-default.css' type='text/css'> 
+        <link rel='stylesheet' 	href='unitegallery/skins/alexis/alexis.css' type='text/css' />
+        
+        <!-- script for creating and saving cookies, as well as hiding login menus-->
         
         <script>
             $(document).ready(function(){
@@ -407,7 +424,173 @@ function makeaprefbox(){
         <!--begin right middle section, space to display user content-->
         <div class="right">
 
-            <p id="demo">demo</p>
+ <!-- begin image gallery content section, which uses the jQuery plugin UniteGallery for scripts and css, as included in the document head-->
+            
+        <div id="gallery" style="display:none;">
+		
+			<img alt="Perrachica" src="http://perrachica.com/wp-content/uploads/perra-chica-home-061.jpg" data-image="http://perrachica.com/wp-content/uploads/perra-chica-home-061.jpg" data-description="The interior of Perrachica">
+			
+			<img alt="100 Montaditos" src="https://www.elconfidencialdigital.com/asset/zoomcrop%252C1366%252C800%252Ccenter%252Ccenter/media/elconfidencialdigital/images/2017/05/10/ECDIMA20170510_0018_1.jpg" data-image="https://www.elconfidencialdigital.com/asset/zoomcrop%252C1366%252C800%252Ccenter%252Ccenter/media/elconfidencialdigital/images/2017/05/10/ECDIMA20170510_0018_1.jpg"
+				data-description="100 Montaditos">
+            <img alt="Starbucks Coffee" src=" https://i2.cdn.turner.com/money/dam/assets/121205044736-starbucks-stores-tablet-large.jpg" data-image=" https://i2.cdn.turner.com/money/dam/assets/121205044736-starbucks-stores-tablet-large.jpg" data-description="Starbucks Coffee">
+            <img alt="Restaurante Dos Cielos" src=" http://lagranvida.madriddiferente.com/wp-content/uploads/2017/02/DOS-CIELOS-vinos-y-campagnes.jpg" data-image=" http://lagranvida.madriddiferente.com/wp-content/uploads/2017/02/DOS-CIELOS-vinos-y-campagnes.jpg" data-description="Restaurante Dos Cielos">
+
+		
+		</div>
+            <!-- begin the script to start the gallery function using UniteGallery, which includes a number of options for customization-->
+        <script type="text/javascript"> 
+			
+			jQuery(document).ready(function(){
+		
+				jQuery("#gallery").unitegallery({
+					
+					//theme options
+					
+					theme_enable_fullscreen_button: false,
+					theme_enable_play_button: false,		
+					theme_enable_hidepanel_button: false,	
+					theme_enable_text_panel: true,		
+					theme_text_padding_left: 20,	
+					theme_text_padding_right: 5,
+					theme_text_align: "left",
+					theme_text_type: "title",
+					theme_hide_panel_under_width: null,
+					
+                    // gallery options
+				
+					gallery_width:900,						
+					gallery_height:600,						
+					gallery_min_width: 400,					
+					gallery_min_height: 300,				
+					gallery_skin:"default",					
+					gallery_images_preload_type:"minimal",
+					gallery_autoplay:true,
+					gallery_play_interval: 4000,
+					gallery_pause_on_mouseover: false,			
+					gallery_control_thumbs_mousewheel:false,	
+					gallery_control_keyboard: false,				
+					gallery_preserve_ratio: true,
+					gallery_debug_errors:true,
+					gallery_background_color: "",
+						
+					//slider options
+	
+					slider_scale_mode: "fill",
+					slider_scale_mode_media: "fill",
+					slider_scale_mode_fullscreen: "down",
+					slider_item_padding_top: 0,					
+					slider_item_padding_bottom: 0,				
+					slider_item_padding_left: 0,				
+					slider_item_padding_right: 0,				
+					slider_transition: "slide",
+					slider_transition_speed:300,				
+					slider_transition_easing: "easeInOutQuad",	
+					slider_control_swipe:false,					
+					slider_control_zoom:false,			 
+					slider_zoom_max_ratio: 6,
+					slider_loader_type: 1,
+					slider_loader_color:"white",
+					slider_enable_bullets: false,				
+					slider_enable_arrows: true,				
+					slider_arrows_skin: "alexis",
+					slider_arrow_left_align_hor:"left",	
+					slider_arrow_left_align_vert:"middle",
+					slider_arrow_left_offset_hor:20,
+					slider_arrow_left_offset_vert:0,
+					slider_arrow_right_align_hor:"right",
+					slider_arrow_right_align_vert:"middle", 
+					slider_arrow_right_offset_hor:20,	
+					slider_arrow_right_offset_vert:0,
+					slider_enable_progress_indicator: false,		 
+				    slider_enable_play_button: false,			 
+				    slider_enable_fullscreen_button: false,		 
+					slider_enable_zoom_panel: false,				 
+					slider_controls_always_on: true,		     
+					slider_controls_appear_ontap: true,			 
+					slider_controls_appear_duration: 300,
+					slider_videoplay_button_type: "square",		 
+					slider_enable_text_panel: true,			 
+					slider_textpanel_always_on: true,			 
+					slider_textpanel_text_valign:"middle",			
+					slider_textpanel_padding_top:10,				
+					slider_textpanel_padding_bottom:10,				
+					slider_textpanel_height: null,					
+					slider_textpanel_padding_title_description: 5,	
+					slider_textpanel_padding_right: 11,				
+					slider_textpanel_padding_left: 11,				
+					slider_textpanel_fade_duration: 200,			
+					slider_textpanel_enable_title: true,			
+					slider_textpanel_enable_description: true,		
+					slider_textpanel_enable_bg: true,				
+					slider_textpanel_bg_color:"#000000",			
+					slider_textpanel_bg_opacity: 0.4,				
+					slider_textpanel_title_color:null,				
+					slider_textpanel_title_font_family:null,		
+					slider_textpanel_title_text_align:null,			
+					slider_textpanel_title_font_size:null,			
+					slider_textpanel_title_bold:false,				
+					slider_textpanel_css_title:{},					
+					slider_textpanel_desc_color:null,				
+					slider_textpanel_desc_font_family:null,			
+					slider_textpanel_desc_text_align:null,			
+					slider_textpanel_desc_font_size:null,			
+					slider_textpanel_desc_bold:null,				
+					slider_textpanel_css_description:{},			
+					slider_textpanel_bg_css:{},						
+					
+                    //thumbnail options
+                    
+                    thumb_width:88,						
+					thumb_height:50,						
+					thumb_fixed_size:true,						
+					thumb_border_effect:true,				
+					thumb_border_width: 0,						
+					thumb_border_color: "#000000",				
+					thumb_over_border_width: 0,				
+					thumb_over_border_color: "#d9d9d9",			
+					thumb_selected_border_width: 1,				
+					thumb_selected_border_color: "#d9d9d9",		
+					thumb_round_corners_radius:0,				
+					thumb_color_overlay_effect: true,			
+					thumb_overlay_color: "#000000",			
+					thumb_overlay_opacity: 0.4,				
+					thumb_overlay_reverse:false,				
+					thumb_image_overlay_effect: false,			
+					thumb_image_overlay_type: "bw",				
+					thumb_transition_duration: 200,			
+					thumb_transition_easing: "easeOutQuad",		
+					thumb_show_loader:true,					
+					thumb_loader_type:"dark",			
+					
+                    //thumbnail panel strip options
+	
+					strippanel_padding_top:8,			
+					strippanel_padding_bottom:8,			
+					strippanel_padding_left:  8,		
+					strippanel_padding_right: 0,			
+					strippanel_enable_buttons: false,			
+					strippanel_buttons_skin: "",		
+					strippanel_padding_buttons: 2,				
+					strippanel_buttons_role : "scroll_strip",   
+					strippanel_enable_handle: true,					
+					strippanel_handle_align: "top",				
+					strippanel_handle_offset: 0,				
+					strippanel_handle_skin: "",				
+					strippanel_background_color:"",				
+					strip_thumbs_align: "left",				
+					strip_space_between_thumbs:6,			
+					strip_thumb_touch_sensetivity:15,  		
+					strip_scroll_to_thumb_duration:500,			
+					strip_scroll_to_thumb_easing:"easeOutCubic", 
+					strip_control_avia:true,		
+					strip_control_touch:true,				
+							
+					
+				});
+			});
+		
+		
+		</script>
 
             
 
