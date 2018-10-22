@@ -112,7 +112,7 @@ This is an html file containing the html5 code to create the main page of the we
                     } else if(getCookie(email).length > 2){
                         alert("There is already an account with that email.")
                     } else {
-                        setCookie(email, name, surname, password, dob, address);
+                        setCookie(email, name, surname, password, dob, address, username);
                         $('#registration')[0].reset();
                     }
                 });
@@ -121,6 +121,7 @@ This is an html file containing the html5 code to create the main page of the we
                      var cname = $("#demail").val();
                      $('#registration')[0].reset();
                      document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                     currentUser.innerText = "Juan-Rios";
                     $('#firstname').val("Juan");
                     $('#surname').val("Rios");
                     $('#address').val("Calle de Fuencarral, 123");
@@ -140,6 +141,7 @@ This is an html file containing the html5 code to create the main page of the we
                     if(checkCookie.length > 2){
                         var password = checkCookie.split(",")[2];
                         if(password.match(checkPass)){
+                            updateProfile(checkEmail);
                            $('.mainpagelink')[0].click();
                         }else{
                             alert("Try a different password.")
@@ -181,8 +183,8 @@ function makeaprefbox(){
         </script>
         
         <script>
-             function setCookie(email, name, surname, password, dob, address){
-                 var obj = "Account Information=" + name + "," + surname + "," + password + "," + dob + "," +address;
+             function setCookie(email, name, surname, password, dob, address, username){
+                 var obj = "Account Information=" + name + "," + surname + "," + password + "," + dob + "," +address + "," + username;
                  var date = new Date();
                  date.setTime(date.getTime() + (1*24*60*60*1000));
                  var expires = "expires="+ date.toUTCString();
@@ -205,17 +207,40 @@ function makeaprefbox(){
                 return "";
                 
 }
-            function changeCookie(cname, name, surname, dob,add){
+            function changeCookie(cname, name, surname, dob,add, username){
                 if(getCookie(cname).length > 2){
                     var password = getCookie(cname).split(",")[2];
                     document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                    setCookie(cname, name, surname, password, dob, add);
+                    setCookie(cname, name, surname, password, dob, add, username);
                     alert("Information Updated!")
                     
                 }else{
                     alert("No account associated with that email.")
                 }
+                
 }
+            
+        function updateProfile(email){
+            
+            var accountInfo = getCookie(email);
+            
+            var info = accountInfo.split("=")[1];
+            var splitThis = info.split(",");
+            
+            var name = splitThis[0];
+            var surname = splitThis[1];
+            var dob = splitThis[3];
+            var add = splitThis[4];
+            var user = splitThis[5];
+            
+            $('#firstname').val(name);
+            $('#surname').val(surname);        
+            $('#address').val(add);
+            $('#dob').val(dob);
+            $('#email').val(email);
+            currentUser.innerText = user;
+                    
+        }
 
         </script>
         
@@ -405,7 +430,7 @@ function makeaprefbox(){
                         
                     </ul>
                 
-                <input type="button" name="update" id="update" value="Update Information" onclick= "changeCookie(document.getElementById('email').value, document.getElementById('firstname').value, document.getElementById('surname').value, document.getElementById('dob').value, document.getElementById('address').value)">
+                <input type="button" name="update" id="update" value="Update Information" onclick= "changeCookie(document.getElementById('email').value, document.getElementById('firstname').value, document.getElementById('surname').value, document.getElementById('dob').value, document.getElementById('address').value), 'Juan-Rios'">
                 
                 </div>
                 <!-- begin section with dummy information for app activity placed in icons, also under to be shown when personal information link is clicked -->
