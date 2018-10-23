@@ -94,7 +94,10 @@ This is an html file containing the html5 code to create the main page of the we
                     $(".middleRegister").hide();
                 });
                 
-                
+                $("#search").click(function() {
+                    document.getElementById('searchName').value='';
+                    document.getElementById('searchLocation').value='';
+                    });
                 
                 $("#save").click(function() {
                     var name = $("#name").val();
@@ -426,9 +429,11 @@ function makeaprefbox(){
 
  <!-- begin image gallery content section, which uses the jQuery plugin UniteGallery for scripts and css, as included in the document head-->
             
-         <div class="topnav">
-            <input type="text" placeholder="Search Name..">
-            <input type="text" placeholder="Search Location..">
+         <div class="topnav search">
+             <h3 style = "text-align: center">Search Engine</h3>
+            <input type="text" placeholder="Search Name.." id = "searchName">
+            <input type="text" placeholder="Search Location.." id = "searchLocation">
+             <input type="button" name="search" id="search" value="search">
         </div>
             
             

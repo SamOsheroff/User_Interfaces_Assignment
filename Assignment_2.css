@@ -293,7 +293,8 @@ img.spaced{
         border: 3px solid #404040;
         border-radius:5px;
         left: 0;
-        margin: 5px 1% 0 1%;
+        margin:auto;
+        margin-bottom: 16px;
         padding: 5px 0 0 0;
         width: 98%;
         height:60px;
@@ -505,7 +506,7 @@ li{
         margin-left: 0;
 }
 
-    #save, #delete, #login, #register, #submit {
+    #save, #delete, #login, #register, #submit, #search {
         font-size: 20px;
         margin-top: 15px;
         background: #588BAE;
@@ -517,7 +518,7 @@ li{
         width: 100%;
     }
 
-    #save:hover, #delete:hover, #login:hover, #register:hover, #submit:hover, #update:hover{
+    #save:hover, #delete:hover, #login:hover, #register:hover, #submit:hover, #update:hover, #search:hover{
         background: #4F97a3;
     }
 
@@ -528,9 +529,20 @@ li{
   margin-right: 16px;
     margin-bottom: 16px;
   border: none;
-    width: 25%;
+    width: 48%;
     border-radius: 5px;
   font-size: 17px;
+}
+
+div.search{
+    width: 99%;
+    background-color:#e6f9ff;
+        border: 3px solid #404040;
+        border-radius:5px;
+        padding: 20px 20px 20px 20px;
+        margin: 10px 1% 10px .5%;
+        overflow:hidden;
+    
 }
 
 @media screen and (max-width: 600px) {
