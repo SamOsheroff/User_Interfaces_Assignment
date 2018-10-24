@@ -41,6 +41,7 @@ This is an html file containing the html5 code to create the main page of the we
                     $(".personalinfo").removeClass('hide');
                     $(".lastopinions").hide();
                     $(".middleRegister").hide();
+                    $(".rightMain").hide();
                     
                 });
     
@@ -49,6 +50,7 @@ This is an html file containing the html5 code to create the main page of the we
                     $(".middleRegister").hide();
                     $(".lastopinions").show(); 
                     $(".lastopinions").removeClass("hide");
+                    $(".rightMain").hide();
                 }); 
     
                 $(".mainpagelink").click(function(){
@@ -59,6 +61,8 @@ This is an html file containing the html5 code to create the main page of the we
                     $(".left").show();
                     $(".right").show();
                     $(".middleLogin").hide();
+                    $(".rightMain").show();
+                    $(".rightMain").removeClass('hide');
                 }); 
     
                 $(".optionsinfolink").click(function(){
@@ -74,7 +78,6 @@ This is an html file containing the html5 code to create the main page of the we
                 
                 $("#register").click(function(){
                     $(".middleRegister").show();
-                    $(".middleRegister").removeClass('hide');
                     $("div.left").hide();
                     $("div.right").hide();
                     $(".personalinfo").hide();
@@ -426,6 +429,8 @@ function makeaprefbox(){
         
         <!--begin right middle section, space to display user content-->
         <div class="right">
+            
+            <div class = "rightMain">
 
  <!-- begin image gallery content section, which uses the jQuery plugin UniteGallery for scripts and css, as included in the document head-->
             
@@ -446,7 +451,7 @@ function makeaprefbox(){
             <img alt="Starbucks Coffee" src=" https://i2.cdn.turner.com/money/dam/assets/121205044736-starbucks-stores-tablet-large.jpg" data-image=" https://i2.cdn.turner.com/money/dam/assets/121205044736-starbucks-stores-tablet-large.jpg" data-description="Starbucks Coffee">
             <img alt="Restaurante Dos Cielos" src=" http://lagranvida.madriddiferente.com/wp-content/uploads/2017/02/DOS-CIELOS-vinos-y-campagnes.jpg" data-image=" http://lagranvida.madriddiferente.com/wp-content/uploads/2017/02/DOS-CIELOS-vinos-y-campagnes.jpg" data-description="Restaurante Dos Cielos">
 
-		
+		</div>
 		</div>
             <!-- begin the script to start the gallery function using UniteGallery, which includes a number of options for customization-->
         <script type="text/javascript"> 
